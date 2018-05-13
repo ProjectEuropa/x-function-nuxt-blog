@@ -21,7 +21,7 @@ export default {
   asyncData (context) {
     return context.app.$storyapi
     .get('cdn/stories', {
-      version: 'draft',
+      version: context.isDev ? 'draft' : 'published',
       starts_with: 'blog/'
     }).then(res => {
       return {
@@ -36,24 +36,6 @@ export default {
       };
     })
   }
-  // data() {
-  //   return {
-  //     posts: [
-  //       {
-  //         title: 'A new Begining',
-  //         previewText: 'This will be awesome , don\'t miss it!',
-  //         thumbnailUrl: 'https://www.healthyfood.co.uk/wp-content/themes/healthyfoodguide/assets/img/structure/hfg-logo-022017.png',
-  //         id: 'a-new-beginning'
-  //       },
-  //       {
-  //         title: 'A Second Begining',
-  //         previewText: 'This will be awesome , don\'t miss it!',
-  //         thumbnailUrl: 'https://www.healthyfood.co.uk/wp-content/themes/healthyfoodguide/assets/img/structure/hfg-logo-022017.png',
-  //         id: 'a-second-beginning'
-  //       },
-  //     ]
-  //   }
-  // }
 }
 </script>
 
