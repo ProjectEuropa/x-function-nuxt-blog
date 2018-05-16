@@ -8,11 +8,11 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Blog of x-fuction ?',
+    title: 'Blog of x-function ?',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'An awesome blog about tech stuff, built with Nuxt and Storyblock' }
+      { hid: 'description', name: 'description', content: 'It is a blog of x-function plan.' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -23,7 +23,7 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#3B8070' },
+  loading: { color: '#3B8070', height : '20px' },
 
   /*
   ** Global CSS
