@@ -4,19 +4,20 @@
     <main class="main-content">
       <nuxt/>
     </main>
+    <the-footer/>
   </div>
 </template>
 
 <script>
 import TheHeader from '@/components/TheHeader/TheHeader'
+import TheFooter from '@/components/TheFooter/TheFooter'
 export default {
   components: { 
-    TheHeader
+    TheHeader,
+    TheFooter
   }
 }
 </script>
-
-
 
 <style>
   * {
@@ -26,6 +27,6 @@ export default {
     font-family: "Lato",  sans-serif;
   }
   .main-content {
-    margin-top: 4.5rem;
+    margin-top: 5rem;
   }
 </style>
