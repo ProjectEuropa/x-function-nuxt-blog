@@ -8,11 +8,11 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Blog of x-function ?',
+    title: 'Blog of Team Project Europa',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'It is a blog of x-function plan.' }
+      { hid: 'description', name: 'description', content: 'Here is a blog of Team ProjectEuropa.' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
