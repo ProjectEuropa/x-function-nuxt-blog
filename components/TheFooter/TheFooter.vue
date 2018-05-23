@@ -17,11 +17,12 @@ export default {
 
 <style lang="scss" scoped>
 footer {
+  padding-top: 3rem;
   position: fixed;
   bottom: 0;
-  background: #022d30;
+  background: #1A1A1A;
   width: 100%;
-  height: 30px;
+  height: 6rem;
   text-align: center;
   color: #ffffff;
 }

@@ -1,8 +1,10 @@
 <template>
     <header class="main-header">
+        <h1>Blog</h1>
+        <hr>
         <nav class="main-nav">
             <ul class="nav-links">
-                <nuxt-link to="/" tag="li" class="nav-link"><a>Top</a></nuxt-link>
+                <nuxt-link to="/" tag="li" class="nav-link"><a>Home</a></nuxt-link>
                 <nuxt-link to="/blog" tag="li" class="nav-link"><a>All Posts</a></nuxt-link>
                 <nuxt-link to="/about" tag="li" class="nav-link"><a>About</a></nuxt-link>
             </ul>
@@ -11,13 +13,31 @@
 </template>
 
 <style lang="scss" scoped>
-.main-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #022d30;
-  height: 4.5rem;
+header {
+  padding-top: 1px;
+  color: #000;
+  background: #1a1a1a;
+  hr {
+    width: 70%;
+  }
+  h1 {
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    margin-top: 25px;
+    padding-top: 25px;
+    background-color: #fff;
+    border-radius: 100%;
+  }
+  // .main-header {
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   background: #022d30;
+  //   height: 20rem;
+  // }
 }
 
 .main-nav {
@@ -30,7 +50,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 5rem;
 }
 
 .nav-link {

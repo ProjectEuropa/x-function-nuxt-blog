@@ -1,14 +1,14 @@
 <template>
-  <section id="posts">
-    	<div class="title-container">
-        <h1>Welcome to Blog of Team Project Europa.</h1>
-        <p class="message">We love CarnageHeart series.</p>
-        <div class="gif">
-          <img src="@/assets/image/mocking.gif">
-          <img src="@/assets/image/tuki.gif">
-        </div>
+  <div>
+      <div class="image-text">
+        <img src="@/assets/image/earth.jpg" style="width: 100vw;">
+        <h2>Welcome to Blog of Team Project Europa.</h2>
       </div>
-  </section>
+    <section id="posts">
+        <div class="title-container">
+        </div>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -43,84 +43,23 @@ body {
 </style>
 
 <style lang="scss" scoped>
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Roboto", serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: #dedede;
-}
-
-h1,
-p ,
-.gif{
+.image-text {
   position: relative;
-  display: block;
-  margin: 0;
-  font-size: 4rem;
-  line-height: 1;
-  transform: translateY(6rem);
-  animation: up 500ms linear forwards;
-  z-index: 1;
-  text-shadow: 0px 1px 1px rgba(255, 255, 255, 1);
-
-  &::before,
-  &::after {
+  h2 {
+    color: #fff;
     position: absolute;
-    content: "";
-    width: 0px;
-    height: 1px;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.2);
-    z-index: -1;
-  }
-
-  &::before {
-    top: 1.4rem;
-  }
-
-  &::after {
-    bottom: 0.4rem;
+    top: 15%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
   }
 }
-
-.title-container {
-  font-size: 0;
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 0.4rem;
-  .message {
-    text-align: center;
-  }
-  .gif {
-    text-align: center;
-    margin-top: 30px;
-    display: flex;
-    justify-content: space-evenly;
-  }
-}
-
-@keyframes up {
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes draw {
-  100% {
-    width: 1%;
+@media (max-width: 669px) {
+  img {
+    height: 350px;
   }
 }
 </style>
