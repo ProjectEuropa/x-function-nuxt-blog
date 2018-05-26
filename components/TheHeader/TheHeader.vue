@@ -1,6 +1,6 @@
 <template>
     <header class="main-header">
-        <h1>Blog</h1>
+        <h1><a href="/">Europa</a></h1>
         <hr>
         <nav class="main-nav">
             <ul class="nav-links">
@@ -22,13 +22,17 @@ header {
   }
   h1 {
     text-align: center;
-    width: 100px;
+    width: 115px;
     height: 100px;
     margin: auto;
     margin-top: 25px;
     padding-top: 25px;
     background-color: #fff;
     border-radius: 100%;
+    a {
+      color: #1a1a1a;
+      text-decoration: none;
+    }
   }
   // .main-header {
   //   position: fixed;

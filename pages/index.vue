@@ -1,21 +1,30 @@
 <template>
   <div>
-      <div class="image-text">
-        
-        <!-- <img src="@/assets/image/earth.jpg" style="width: 100vw;">
-        <h2>Welcome to Blog of Team Project Europa.</h2> -->
-        
+    <div class="main-visual">
+      <h2>Welcome to Web Site of Team Project Europa.</h2>
+       <div id="particles-js"></div>
       </div>
-      <div class="main-visual">
-        <h2>Welcome to Blog of Team Project Europa.</h2>
-        <div id="particles-js"></div>
-      </div>
-      <!--  -->
-    <section id="posts">
-        <div class="title-container">
+      <div class="our-services-area">
+        <h2 id="services">Our Skills</h2>
+        <div id="service-contents">
+          <div class="elements">
+            <i class="fa fa-gamepad" aria-hidden="true"></i>
+            <h3>Carnage Heart</h3>
+            <p>We develop information about Carnage Heart.</p>
+          </div>
+          <div class="elements">
+            <i class="fa fa-desktop" aria-hidden="true"></i>
+            <h3>Web Site</h3>
+            <p>We will make creative website.</p>
+          </div>
+          <div class="elements">
+            <i class="fa fa-diamond" aria-hidden="true"></i>
+            <h3>Web Appliction</h3>
+            <p>We will accept requests for web applications.</p>
+          </div>
         </div>
-    </section>
-  </div>
+      </div>
+    </div>
 </template>
 
 <script>
@@ -114,31 +123,7 @@ body {
 }
 </style>
 
-
-
 // Particlesjs
-<style scoped>
-/* ---- reset ---- */
-body {
-  margin: 0;
-  font: normal 75% Arial, Helvetica, sans-serif;
-}
-canvas {
-  display: block;
-  vertical-align: bottom;
-} /* ---- particles.js container ---- */
-#particles-js {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #333b6b;
-  background-image: url("~/assets/image/earth.jpg");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: 50% 0%;
-}
-</style>
-
 <style lang="scss" scoped>
 .main-visual {
   width: 100%;
@@ -146,8 +131,8 @@ canvas {
   h2 {
     color: #fff;
     position: absolute;
-    z-index: 999;
-    top: 45%;
+    z-index: 100;
+    top: 35%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
@@ -155,10 +140,60 @@ canvas {
     margin: 0;
     padding: 0;
   }
+  canvas {
+    display: block;
+  }
+  #particles-js {
+    // position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333b6b;
+    background-image: url("~/assets/image/earth.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 50% 0%;
+  }
+}
+
+.our-services-area {
+  #services {
+    // margin: auto;
+    text-align: center;
+  }
+  #service-contents {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    text-align: center;
+    .elements {
+      display: table-cell;
+      vertical-align: middle;
+      i {
+        font-size: 5em;
+        color: #fff;
+        background-color: #000;
+        border-radius: 100%;
+        padding: 30px;
+      }
+    }
+  }
 }
 @media (max-width: 669px) {
-  img {
-    height: 350px;
+  .main-visual {
+    h2 {
+      top: 20%;
+      font-size: 1em;
+    }
+    #particles-js {
+      background-size: 100%;
+      height: 265px;
+    }
+  }
+  .our-services-area {
+    #service-contents {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
 </style>

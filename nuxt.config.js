@@ -8,11 +8,11 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Blog of Team Project Europa',
+    title: 'Web Site of Team Project Europa',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Here is a blog of Team ProjectEuropa.' }
+      { hid: 'description', name: 'description', content: 'Here is a Web Site of Team Project Europa.' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -43,12 +43,14 @@ module.exports = {
   modules: [
     [
     // Doc: https://github.com/nuxt-community/axios-module#usage
+      "@nuxtjs/font-awesome",
       "storyblok-nuxt", 
       { 
         accessToken: process.env.NODE_ENV == 'prodction' 
         ? "EBSXrBcxkgTqckTrol95FQtt" 
         : "NgkNuylZ9lNCXDORMQ93qwtt", 
-        cacheProvider: "memory"}
+        cacheProvider: "memory"
+      },
     ]
   ],
   
