@@ -41,9 +41,9 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    "@nuxtjs/font-awesome",
     [
     // Doc: https://github.com/nuxt-community/axios-module#usage
-      "@nuxtjs/font-awesome",
       "storyblok-nuxt", 
       { 
         accessToken: process.env.NODE_ENV == 'prodction' 
@@ -51,7 +51,9 @@ module.exports = {
         : "NgkNuylZ9lNCXDORMQ93qwtt", 
         cacheProvider: "memory"
       },
-    ]
+     
+    ],
+    
   ],
   
   generate: {
