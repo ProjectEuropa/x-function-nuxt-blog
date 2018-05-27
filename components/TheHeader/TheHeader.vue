@@ -22,6 +22,7 @@ header {
   }
   h1 {
     text-align: center;
+    font-style: oblique;
     width: 115px;
     height: 100px;
     margin: auto;

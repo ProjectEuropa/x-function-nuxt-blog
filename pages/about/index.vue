@@ -5,12 +5,16 @@
           <div class="element">
             <i class="fa fa-graduation-cap" aria-hidden="true"></i>
             <h3>Expert of Carnage Heart</h3>
-            <p>Carnage Heart was the most proud and kept official rating rank 1.</p>
+            <h4>All rounder and Expert of 36chip.</h4>
+            <img src="@/assets/image/chip.jpeg">
+            <p>Carnage Heart EXA was the most proud and kept official rating rank 1.&nbsp;</p>
           </div>
           <div class="element">
             <i class="fa fa-laptop" aria-hidden="true"></i>
             <h3>Web Engineer</h3>
-            <p>PHP framework Laravel is good area, frontend uses Vue.js2 preference.</p>
+            <h4>HTML5 CSS3 PHP Laravel JavaScript jQuery Vue.js2</h4>
+            <img src="@/assets/image/web-engineer.jpeg">
+            <p>Backend uses Laravel preference, frontend uses Vue.js2 preference.　&nbsp;</p>
           </div>
         </div>
     </section>
@@ -63,11 +67,26 @@ export default {
         padding: 30px;
       }
     }
+    img {
+      border-radius: 5%;
+      max-width: 75%;
+      max-height: 75%;
+    }
   }
 }
 
-// #about-page p {
-//   white-space: pre-line;
-// }
+@media (max-width: 669px) {
+  #about-page {
+    .about-area {
+      display: block;
+      .element {
+        margin-bottom: 50px;
+        i {
+          font-size: 3em;
+        }
+      }
+    }
+  }
+}
 </style>
 

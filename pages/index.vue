@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div class="main-visual">
+    <section class="main-visual">
       <h2>Welcome to Web Site of Team Project Europa.</h2>
        <div id="particles-js"></div>
-      </div>
-      <div class="our-services-area">
+      </section>
+      <section class="our-services-area">
         <h2 id="services">Our Skills</h2>
         <div id="service-contents">
           <div class="elements">
@@ -23,7 +23,7 @@
             <p>We will accept requests for web applications.</p>
           </div>
         </div>
-      </div>
+      </section>
     </div>
 </template>
 
@@ -193,6 +193,12 @@ body {
     #service-contents {
       display: flex;
       flex-direction: column;
+      .elements {
+        margin-bottom: 50px;
+        i {
+          font-size: 3em;
+        }
+      }
     }
   }
 }
