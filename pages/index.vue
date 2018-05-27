@@ -113,7 +113,8 @@ html {
 }
 
 body {
-  margin: 0;
+  background: #000000 url("~/assets/image/europa.jpg") center top no-repeat
+    fixed;
 }
 
 @media (min-width: 35rem) {
@@ -156,8 +157,9 @@ body {
 }
 
 .our-services-area {
+  padding-top: 20px;
+  background-color: white;
   #services {
-    // margin: auto;
     text-align: center;
   }
   #service-contents {

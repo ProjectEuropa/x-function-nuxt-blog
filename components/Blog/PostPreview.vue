@@ -36,7 +36,6 @@ export default {
 
 <style lang="scss" scoped>
 #posts {
-  
   a {
     text-decoration: none;
     color: black;
@@ -60,6 +59,8 @@ export default {
   .post-preview-content {
     text-align: center;
     padding: 1rem;
+    color: #fff;
+    background-color: #333333;
   }
 
   @media (min-width: 35rem) {
