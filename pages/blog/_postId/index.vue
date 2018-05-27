@@ -3,13 +3,17 @@
       <section class="blog-area">
         <h2>{{ title }}</h2>
         <img :src="image">
-        <p>{{ content }}</p>
+        <vue-markdown class="markdown">{{ content }}</vue-markdown>
       </section>
   </div>
 </template>
 
 <script>
+import VueMarkdown from "vue-markdown";
 export default {
+  components: {
+    VueMarkdown
+  },
   asyncData(context) {
     return context.app.$storyapi
       .get("cdn/stories/blog/" + context.params.postId, {
@@ -57,6 +61,12 @@ export default {
     }
     p {
       color: #fff;
+    }
+    .markdown {
+      color: #fff;
+      p a{
+          color: aquamarine;;
+      }
     }
   }
   .post-thumbnail {
