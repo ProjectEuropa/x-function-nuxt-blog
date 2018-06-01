@@ -3,7 +3,7 @@
       <section class="blog-area">
         <h2>{{ title }}</h2>
         <img :src="image">
-        <vue-markdown class="markdown">{{ content }}</vue-markdown>
+        <vue-markdown :source="source" class="markdown-body">{{ content }}</vue-markdown>
       </section>
   </div>
 </template>
@@ -13,6 +13,11 @@ import VueMarkdown from "vue-markdown";
 export default {
   components: {
     VueMarkdown
+  },
+  data() {
+    return {
+      source: "red"
+    };
   },
   asyncData(context) {
     return context.app.$storyapi
@@ -37,7 +42,11 @@ export default {
 };
 </script>
 
+// global
 <style>
+pre {
+  background-color: #000;
+}
 </style>
 
 
@@ -62,10 +71,11 @@ export default {
     p {
       color: #fff;
     }
-    .markdown {
-      color: #fff;
-      p a{
-          color: aquamarine;;
+    .markdown-body {
+       color: #fff;
+      p a {
+        color: aquamarine;
+        text-decoration: none;
       }
     }
   }

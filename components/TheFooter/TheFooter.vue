@@ -18,7 +18,6 @@ export default {
 <style lang="scss" scoped>
 footer {
   padding-top: 3rem;
-  // position: fixed;
   bottom: 0;
   background: #1A1A1A;
   width: 100%;

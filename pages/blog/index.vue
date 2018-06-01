@@ -46,6 +46,7 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    flex-wrap: wrap;
   }
   @media (min-width: 35rem) {
     #posts {

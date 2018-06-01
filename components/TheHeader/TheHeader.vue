@@ -35,14 +35,6 @@ header {
       text-decoration: none;
     }
   }
-  // .main-header {
-  //   position: fixed;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   background: #022d30;
-  //   height: 20rem;
-  // }
 }
 
 .main-nav {
