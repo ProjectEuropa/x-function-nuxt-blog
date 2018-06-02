@@ -6,7 +6,9 @@
         <div class="post-preview-content">
           <h1>{{ title }}</h1>
           <p>{{ excerpt }}</p>
+          <p><i class="fa fa-clock-o" aria-hidden="true"></i> {{ created }}</p>
         </div>
+        
       </article>
     </nuxt-link>
 </template>
@@ -27,6 +29,10 @@ export default {
       required: true
     },
     id: {
+      type: String,
+      required: true
+    },
+    created: {
       type: String,
       required: true
     }
