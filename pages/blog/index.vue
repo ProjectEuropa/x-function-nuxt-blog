@@ -7,16 +7,19 @@
      :excerpt="post.previewText"
      :thumbnailImage="post.thumbnailUrl"
      :id="post.id"
+     :created="post.created"
     />
   </section>
 </template>
 
 <script>
 import PostPreview from "@/components/Blog/PostPreview";
+import moment from 'moment';
 
 export default {
   components: {
-    PostPreview
+    PostPreview,
+    moment
   },
   asyncData (context) {
     return context.app.$storyapi
@@ -30,7 +33,8 @@ export default {
             id: bp.slug,
             title: bp.content.title,
             previewText: bp.content.summary,
-            thumbnailUrl: bp.content.thumbnail
+            thumbnailUrl: bp.content.thumbnail,
+            created: moment(bp.created_at).format('YYYY/MM/DD HH:mm'),
           };
         })
       };
