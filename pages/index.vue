@@ -113,6 +113,7 @@ html {
 }
 
 body {
+  margin: 0;
   background: #000000 url("~/assets/image/europa.jpg") center top no-repeat
     fixed;
 }
