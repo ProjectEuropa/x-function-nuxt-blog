@@ -11,16 +11,19 @@
             <i class="fa fa-gamepad" aria-hidden="true"></i>
             <h3>Carnage Heart</h3>
             <p>We develop information about Carnage Heart.</p>
+            <p>カルネージハートの情報を発信しています。</p>
           </div>
           <div class="elements">
             <i class="fa fa-desktop" aria-hidden="true"></i>
             <h3>Web Site</h3>
             <p>We will make creative website.</p>
+            <p>クリエイティブなWebサイトを製作します。</p>
           </div>
           <div class="elements">
             <i class="fa fa-diamond" aria-hidden="true"></i>
             <h3>Web Appliction</h3>
             <p>We will accept requests for web applications.</p>
+            <p>Webアプリケーション製作を受託します。</p>
           </div>
         </div>
       </section>
