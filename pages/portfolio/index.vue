@@ -21,7 +21,8 @@
 </template>
 
 <script>
-import { Carousel3d, Slide } from 'vue-carousel-3d';
+import Carousel3d from 'vue-carousel-3d/src/Carousel3d.vue'
+import Slide from 'vue-carousel-3d/src/Slide.vue'
 
 export default {
   components: {
