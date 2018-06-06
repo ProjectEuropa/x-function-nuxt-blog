@@ -21,6 +21,8 @@
     "particles.js": "^2.0.0",
     "particlesjs": "^2.2.2",
     "storyblok-nuxt": "0.0.3",
+    "vue-carousel": "^0.8.1",
+    "vue-carousel-3d": "^0.1.20",
     "vue-markdown": "^2.2.4"
   },
   "devDependencies": {
