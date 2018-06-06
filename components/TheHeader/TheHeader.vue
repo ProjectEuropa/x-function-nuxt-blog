@@ -7,6 +7,7 @@
                 <nuxt-link to="/" tag="li" class="nav-link"><a>Home</a></nuxt-link>
                 <nuxt-link to="/blog" tag="li" class="nav-link"><a>All Posts</a></nuxt-link>
                 <nuxt-link to="/about" tag="li" class="nav-link"><a>About</a></nuxt-link>
+                <nuxt-link to="/portfolio" tag="li" class="nav-link"><a>Portfolio</a></nuxt-link>
             </ul>
         </nav>
     </header>
