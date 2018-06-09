@@ -8,6 +8,7 @@
                 <nuxt-link to="/blog" tag="li" class="nav-link"><a>All Posts</a></nuxt-link>
                 <nuxt-link to="/about" tag="li" class="nav-link"><a>About</a></nuxt-link>
                 <nuxt-link to="/portfolio" tag="li" class="nav-link"><a>Portfolio</a></nuxt-link>
+                <nuxt-link to="/contact" tag="li" class="nav-link"><a>Contact</a></nuxt-link>
             </ul>
         </nav>
     </header>
@@ -71,6 +72,13 @@ header {
     border-bottom: 3px solid #06c4d1;
     a {
       color: #06c4d1;
+    }
+  }
+}
+@media (max-width: 669px) {
+  .nav-links {
+    a {
+      font-size: 0.4em;
     }
   }
 }
