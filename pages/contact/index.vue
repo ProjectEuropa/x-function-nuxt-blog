@@ -3,15 +3,18 @@
 		<div id="form-div">
 			<h2 >お問い合わせはこちらからお願いします。</h2>
 			<p class="name">
-				<input name="name" v-model="name" type="text" class="feedback-input" :placeholder="nameIcon + ' お名前'" id="name" />
+        <span class="validation" v-show="validation.name">お名前は必須です</span>
+				<input name="name" v-model="contact.name" type="text" class="feedback-input" :placeholder="nameIcon + ' お名前'" id="name" />
 			</p>
 			
 			<p class="email">
-				<input name="email" v-model="email"  type="email" class="feedback-input" id="email" :placeholder="emailIcon + ' メールアドレス'" />
+        <span class="validation" v-show="validation.email">メールアドレスは必須かつメールアドレスでなければなりません。</span>
+				<input name="email" v-model="contact.email"  type="email" class="feedback-input" id="email" :placeholder="emailIcon + ' メールアドレス'" />
 			</p>
 			
 			<p class="text">
-				<textarea name="text" v-model="comment" class="feedback-input" id="comment" :placeholder="commnentIcon + 'お問い合わせ内容' "></textarea>
+        <span class="validation" v-show="validation.comment">お問い合わせ内容は必須です。</span>
+				<textarea name="text" v-model="contact.comment" class="feedback-input" id="comment" :placeholder="commnentIcon + 'お問い合わせ内容' "></textarea>
 			</p>
 			<div class="submit">
 				<input type="button" value="確認" id="button-blue" @click="confirm"/>
@@ -23,17 +26,17 @@
 			<div class="modal-wrapper">
 				<div class="modal-container">
 
-				<div class="modal-header">
+				<div class="modal-header" >
 					<slot name="header">
 					お問い合わせ内容確認
 					</slot>
 				</div>
-
-				<div class="modal-body">
+        <loading :active.sync="isLoading" :can-cancel="false"></loading>
+				<div class="modal-body" v-if="!complete">
 					<slot name="body">
-						<p>お名前：{{ name }}</p>
-						<p>メールアドレス：{{ email }}</p>
-						<p>お問い合わせ内容：{{ comment }}</p>
+						<p>お名前：{{ contact.name }}</p>
+						<p>メールアドレス：{{ contact.email }}</p>
+						<p>お問い合わせ内容：{{ contact.comment }}</p>
 					</slot>
 				</div>
 
@@ -46,8 +49,8 @@
 						<span>送信</span>
 					</button>
 					</slot>
-					<slot name="footer" v-if="complete">
-					<button class="modal-default-button cancel-btn" @click="showModal = false; complete = false;">
+					<slot name="footer" v-else-if="complete">
+					<button class="modal-default-button cancel-btn complete-btn" @click="showModal = false; complete = false;">
 						<span>お問い合わせが完了しました</span>
 					</button>						
 					</slot>
@@ -60,45 +63,82 @@
 </template>
 
 <script>
+import Loading from 'vue-loading-overlay';
+import 'vue-loading-overlay/dist/vue-loading.min.css';
 export default {
+  components: {
+    Loading
+  },
 	data() {
 		return {
 			nameIcon: '\uf007',
 			emailIcon: '\uf003',
 			commnentIcon: '\uf27b',
-			name:'',
-			email: '',
-			comment: '',
 			showModal: false,
 			complete: false,
+      isLoading: false,
+      contact: {
+        name: '',
+        email: '',
+        comment: '',
+      },
+      validation: {
+        name: false,
+        email: false,
+        comment: false,        
+      }
 		}
 	},
-    mounted() {
-
+  methods: {
+    validations() {
+      if (this.contact.name === '') {
+        this.validation.name = true;
+      } else {
+        this.validation.name = false;
+      }
+      if (this.contact.email === '' || !(validator.validate(this.contact.email))) {
+        this.validation.email = true;
+      } else {
+        this.validation.email = false;
+      }
+      if (this.contact.comment === '') {
+        this.validation.comment = true;
+      } else {
+        this.validation.comment = false;
+      }
+      return (this.validation.name || this.validation.email || this.validation.comment);
     },
-	methods: {
 		confirm() {
-			this.showModal = true;
-		},
+      if (this.validations()) {
+        this.showModal = false;
+      } else {
+        this.showModal = true;
+      }
+    },
 		send() {
+      this.isLoading = true;
 			const message = {
-				text: 'name: ' + this.name + '\n' + 'email: ' + this.email + '\n' + 'comment: ' + this.comment,
+				text: 'name: ' + this.contact.name + '\n' + 'email: ' + this.contact.email + '\n' + 'comment: ' + this.contact.comment,
 			}
 			webhook.send(message, function(err, res) {
 				if (err) {
 					console.log('Error:', err);
 				}
 			});
-			this.name = '';
-			this.email = '';
-			this.comment = '';
-			this.complete = true;
-		}
-	}
+      setTimeout(() => {
+        this.contact.name = '';
+			  this.contact.email = '';
+			  this.contact.comment = '';
+        this.isLoading = false;
+        this.complete = true;
+      },  3 * 1000)
+		},
+  }
 }
 const { IncomingWebhook } = require('@slack/client');
 const url = 'https://hooks.slack.com/services/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';
 const webhook = new IncomingWebhook(url);
+const validator = require("email-validator");
 </script>
 
 <style scoped>
@@ -121,7 +161,6 @@ h2 {
     padding-top:35px;
     padding-bottom:50px;
     width: 500px;
-
   	-moz-border-radius: 7px;
   	-webkit-border-radius: 7px;
   	margin: auto;
@@ -143,7 +182,7 @@ h2 {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
   	border: 3px solid rgba(0,0,0,0);
-	font-family: "FontAwesome";
+	  font-family: "FontAwesome";
 }
 
 .feedback-input:focus{
@@ -186,8 +225,8 @@ input:focus, textarea:focus {
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
-  margin-top:-4px;
-  font-weight:700;
+    margin-top:-4px;
+    font-weight:700;
 }
 
 #button-blue:hover{
@@ -197,6 +236,10 @@ input:focus, textarea:focus {
     
 .submit:hover {
     color: #3498db;
+}
+
+.validation {
+  color: #DC143C;
 }
     
 .ease {
@@ -332,6 +375,22 @@ input:focus, textarea:focus {
 @media only screen and (max-width: 580px) {
     #form-div{
         width: 88%;
+    }
+    .modal-default-button {
+      width: 30%;
+    }
+    .modal-container {
+      width: 300px;
+    }
+    .btn, .cancel-btn {
+      width: 120px;
+      padding: 0px 20px 0px 20px;
+    }
+    .modal-footer {
+      justify-content: space-between;
+    }
+    .complete-btn {
+      width: 250px;
     }
 }
 </style>
