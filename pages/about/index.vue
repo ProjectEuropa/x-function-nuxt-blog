@@ -1,6 +1,6 @@
 <template>
     <section id="about-page">
-        <h2>ABOUT US</h2>
+        <p>Team Project Europaはフリーランス（個人事業主）としてWebサイト・Webアプリケーションの制作を行っています。</p>
         <div class="about-area">
           <div class="element">
             <i class="fa fa-graduation-cap" aria-hidden="true"></i>
@@ -17,7 +17,7 @@
             <h4>HTML5 CSS3 PHP Laravel JavaScript jQuery Vue.js</h4>
             <img src="@/assets/image/web-engineer.jpeg">
             <p>Backend uses Laravel preference, frontend uses Vue.js preference.</p>
-            <p>バックエンドはLaravel、フロントエンドはVue.jsを得意とします</p>
+            <p>バックエンドはLaravel、フロントエンドはVue.jsを得意とします。</p>
           </div>
         </div>
     </section>
@@ -54,8 +54,9 @@ export default {
   margin-top: 0px;
   padding-top: 30px;
   padding-bottom: 30px;
-  h2 {
+  p {
     text-align: center;
+    margin-bottom: 40px;
   }
   .about-area {
     display: flex;
