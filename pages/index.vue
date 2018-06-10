@@ -17,13 +17,13 @@
             <i class="fa fa-desktop" aria-hidden="true"></i>
             <h3>Web Site</h3>
             <p>We will make creative website.</p>
-            <p>クリエイティブなWebサイトを製作します。</p>
+            <p>クリエイティブなWebサイトを制作します。</p>
           </div>
           <div class="elements">
             <i class="fa fa-diamond" aria-hidden="true"></i>
             <h3>Web Appliction</h3>
             <p>We will accept requests for web applications.</p>
-            <p>Webアプリケーション製作を受託します。</p>
+            <p>Webアプリケーション製作を制作します。</p>
           </div>
         </div>
       </section>
@@ -149,7 +149,6 @@ body {
     display: block;
   }
   #particles-js {
-    // position: absolute;
     width: 100%;
     height: 100%;
     background-color: #333b6b;
