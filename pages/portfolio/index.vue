@@ -14,7 +14,7 @@
                 <img src="@/assets/image/X-FUNCTION-po.png">
             </slide>
             <slide :index="4">
-                <img src="@/assets/image/Qiita-po.png">
+                <img src="@/assets/image/4AnswersQuiz.png">
             </slide>
         </carousel-3d>
         
@@ -35,15 +35,21 @@
             <div class="portfolio-area">
                 <a href="https://projecteuropa.github.io/Sass-practice/" target="_blank"><img src="@/assets/image/sass-practice-po.png" class="image"></a>
                 <p class="description"><span class="title">Sass Practice</span><br>
-                    Sassの課題用として作成したWEBサイト。Bootstrap4を使用。
+                    Sassの課題用として作成したWEBサイト　Bootstrap4を使用　
                 </p>
             </div>
             <div class="portfolio-area">
                 <a href="https://x-function.arukascloud.io/" target="_blank"><img src="@/assets/image/X-FUNCTION-po.png" class="image"></a>
                 <p class="description"><span class="title">X-FUNCTION</span><br>
-                    カルネージハート風ゲーム「X-FUNCTION」のWEB宣伝ページ。 <br> Nuxt.jsを使用。
+                    カルネージハート風ゲーム「X-FUNCTION」のWEB宣伝ページ　 <br> Nuxt.jsを使用
                 </p>
             </div>
+            <div class="portfolio-area">
+                <a href="http://faq.php.xdomain.jp/" target="_blank"><img src="@/assets/image/4AnswersQuiz.png" class="image"></a>
+                <p class="description"><span class="title">4 Answers Quiz</span><br>
+                    PHP7 + Laravel5.5 + Vue.js2 +Bootstrap3で作成したクイズアプリ<br>管理画面込
+                </p>
+            </div>            
         </section>
     </div>
 </template>
