@@ -23,7 +23,7 @@
             <i class="fa fa-diamond" aria-hidden="true"></i>
             <h3>Web Appliction</h3>
             <p>We will accept requests for web applications.</p>
-            <p>Webアプリケーション製作を制作します。</p>
+            <p>Webアプリケーション制作を受託します。</p>
           </div>
         </div>
       </section>
