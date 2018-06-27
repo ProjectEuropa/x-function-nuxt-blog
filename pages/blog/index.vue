@@ -12,7 +12,7 @@
       />
     </section>
     <loading :active.sync="isLoading" :can-cancel="false"></loading>
-    <nav style="color:red;" class="pagination">
+    <nav class="pagination">
       <ul class="page-numbers" v-if="pageData.totalPageCount">
         <li v-for="index in pageData.totalPageCount" :key="index" @click="loadpage(index)">
           <nuxt-link :to="{ path: '/blog', query: { page: index } }">{{ index }}</nuxt-link>
@@ -124,6 +124,9 @@ export default {
         text-decoration: none;
         padding: 8px 16px;
         background-color: rgb(100, 100, 100);
+        &.nuxt-link-exact-active {
+          background-color: rgba(115, 252, 121, 0.842);
+        }
       }
     }
   }
