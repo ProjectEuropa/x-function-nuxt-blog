@@ -4,11 +4,11 @@
       <article class="post-preview">
         <div class="post-preview-thumbnail" :style="{backgroundImage: 'url(' + thumbnailImage + ')'}"></div>
         <div class="post-preview-content">
+          <span v-for="tag in tags" :key="tag"><i class="fa fa-search" aria-hidden="true">{{tag}}</i></span>
           <h1>{{ title }}</h1>
           <p>{{ excerpt }}</p>
           <p><i class="fa fa-clock-o" aria-hidden="true"></i> {{ created }}</p>
         </div>
-        
       </article>
     </nuxt-link>
 </template>
@@ -34,6 +34,10 @@ export default {
     },
     created: {
       type: String,
+      required: true
+    },
+    tags: {
+      type: Array,
       required: true
     }
   }
@@ -69,10 +73,17 @@ export default {
     background-color: #333333;
   }
 
+  span {
+    background-color: rgba(120, 248, 199, 0.842);
+    margin: 0 5px;
+    border-radius: 5%;
+    color: #000;
+  }
+
   @media (min-width: 35rem) {
     .post-preview {
       width: 25rem;
-      margin: 1rem;
+      margin: 1.6rem;
     }
   }
 }

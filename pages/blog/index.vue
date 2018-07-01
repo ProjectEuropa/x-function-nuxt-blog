@@ -9,6 +9,7 @@
       :thumbnailImage="post.thumbnailUrl"
       :id="post.id"
       :created="post.created"
+      :tags="post.tags"
       />
     </section>
     <loading :active.sync="isLoading" :can-cancel="false"></loading>
@@ -57,7 +58,8 @@ export default {
               title: bp.content.title,
               previewText: bp.content.summary,
               thumbnailUrl: bp.content.thumbnail,
-              created: moment(bp.created_at).format("YYYY/MM/DD HH:mm")
+              created: moment(bp.created_at).format("YYYY/MM/DD HH:mm"),
+              tags: bp.tag_list
             };
           }),
           pageData: {
@@ -84,7 +86,8 @@ export default {
               title: bp.content.title,
               previewText: bp.content.summary,
               thumbnailUrl: bp.content.thumbnail,
-              created: moment(bp.created_at).format("YYYY/MM/DD HH:mm")
+              created: moment(bp.created_at).format("YYYY/MM/DD HH:mm"),
+              tags: bp.tag_list
             };
           });
           this.posts = posts;
@@ -113,6 +116,7 @@ export default {
 
 <style lang="scss" scoped>
 .pagination {
+  margin-top: 30px;
   ul {
     display: flex;
     flex-flow: row;
