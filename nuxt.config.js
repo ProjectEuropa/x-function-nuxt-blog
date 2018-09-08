@@ -55,7 +55,9 @@ module.exports = {
       },
      
     ],
-    
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-125105163-2'
+    }]
   ],
   
   generate: {
@@ -100,9 +102,4 @@ module.exports = {
       }
     }
   },
-  modules: [
-    ['@nuxtjs/google-analytics', {
-      id: 'UA-125105163-2'
-    }]
- ]
 }
