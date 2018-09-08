@@ -68,7 +68,6 @@ module.exports = {
           return [
             '/',
             '/blog',
-            '/about',
             ...blogPosts
           ]
       });
@@ -100,5 +99,10 @@ module.exports = {
         })
       }
     }
-  }
+  },
+  modules: [
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-125105163-2'
+    }]
+ ]
 }
