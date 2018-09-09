@@ -5,7 +5,7 @@
                 <img src="@/assets/image/europa-po.png">
             </slide>
             <slide :index="1">
-                <img src="@/assets/image/CarnageHeartEXAM-po.png">
+                <img src="@/assets/image/nursery-map.png">
             </slide>
             <slide :index="2">
                 <img src="@/assets/image/sass-practice-po.png">
@@ -27,9 +27,9 @@
                 </p>
             </div>
             <div class="portfolio-area">
-                <a href="http://exams.php.xdomain.jp/" target="_blank"><img src="@/assets/image/CarnageHeartEXAM-po.png" class="image"></a>
-                <p class="description"><span class="title">Carnage Heart EXAM</span><br>
-                PHP7 + Laravel5.4 + Bootstrap3 + Vue.js2で作成したクイズアプリ
+                <a href="https://nursery-map.herokuapp.com/" target="_blank"><img src="@/assets/image/nursery-map.png" class="image"></a>
+                <p class="description"><span class="title">Nursery Map</span><br>
+                    Nuxt.jsで作成した保育園の一覧を地図上で表示するWebアプリ
                 </p>
             </div>
             <div class="portfolio-area">
