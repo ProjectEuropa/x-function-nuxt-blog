@@ -136,7 +136,7 @@ export default {
   }
 }
 const { IncomingWebhook } = require('@slack/client');
-const url = 'https://hooks.slack.com/services/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';
+const url = 'https://hooks.slack.com/services/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';
 const webhook = new IncomingWebhook(url);
 const validator = require("email-validator");
 </script>
