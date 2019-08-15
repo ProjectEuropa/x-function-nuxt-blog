@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/font-awesome": "^1.0.4",
     "@nuxtjs/pwa": "^2.6.0",
     "email-validator": "^2.0.4",
