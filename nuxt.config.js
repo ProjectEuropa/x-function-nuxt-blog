@@ -51,7 +51,9 @@ export default {
     proxy: true,
   },
 
-
+  env: {
+    SLACK_URL: process.env.SLACK_URL,
+  },
   /*
   ** Build configuration
   */

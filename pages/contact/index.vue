@@ -135,6 +135,7 @@ export default {
 		},
   }
 }
+require('dotenv').config()
 const validator = require("email-validator");
 const url = process.env.SLACK_URL;
 const request = require('request');
