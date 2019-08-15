@@ -116,14 +116,15 @@ export default {
     },
 		send() {
       this.isLoading = true;
-			const message = {
-				text: 'name: ' + this.contact.name + '\n' + 'email: ' + this.contact.email + '\n' + 'comment: ' + this.contact.comment,
-			}
-			webhook.send(message, function(err, res) {
-				if (err) {
-					console.log('Error:', err);
-				}
-			});
+      const message = {
+				text: 'name: ' + this.contact.name + '\n' + 'email: ' + this.contact.email + '\n' + 'comment: ' + this.contact.comment,}
+      this.$axios.post(url, JSON.stringify(message), {
+        withCredentials: false,
+        transformRequest: [(message, headers) => {
+          delete headers.post["Content-Type"]
+          return message
+        }]
+      });
       setTimeout(() => {
         this.contact.name = '';
 			  this.contact.email = '';
@@ -134,9 +135,10 @@ export default {
 		},
   }
 }
-const { IncomingWebhook } = require('@slack/client');
-const webhook = new IncomingWebhook(url);
 const validator = require("email-validator");
+const url = process.env.SLACK_URL;
+const request = require('request');
+
 </script>
 
 <style scoped>

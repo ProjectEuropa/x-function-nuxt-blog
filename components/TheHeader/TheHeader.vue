@@ -4,14 +4,27 @@
         <hr>
         <nav class="main-nav">
             <ul class="nav-links">
-                <li class="nav-link"><a href="/">Home</a></li>
-                <li class="nav-link"><a href="/about">About</a></li>
-                <li class="nav-link"><a href="/portfolio">Portfolio</a></li>
-                <li class="nav-link"><a href="/contact">Contact</a></li>
+                <li class="nav-link" :class="{'active': url === '/'}"><a href="/">Home</a></li>
+                <li class="nav-link" :class="{'active': url.indexOf('/about') !== -1}"><a href="/about">About</a></li>
+                <li class="nav-link" :class="{'active': url.indexOf('/portfolio') !== -1}"><a href="/portfolio">Portfolio</a></li>
+                <li class="nav-link" :class="{'active': url.indexOf('/contact') !== -1}"><a href="/contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      url: ''
+    }
+  },
+  mounted() {
+    this.url = location.pathname;
+  }
+}
+</script>
 
 <style lang="scss">
 header {
@@ -67,10 +80,10 @@ header {
       color: #06c4d1;
     }
   }
-  &.nuxt-link-exact-active {
-    border-bottom: 3px solid #06c4d1;
+  &.active {
     a {
       color: #06c4d1;
+      border-bottom: 3px solid #06c4d1;
     }
   }
 }

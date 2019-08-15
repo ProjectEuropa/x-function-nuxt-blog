@@ -48,7 +48,10 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    proxy: true,
   },
+
+
   /*
   ** Build configuration
   */
@@ -56,7 +59,10 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {
+   extend: function (config, {isDev, isClient}) {
+    config.node = {
+      fs: "empty"
+      };
     }
   }
 }
