@@ -1,29 +1,42 @@
 <template>
-    <header class="main-header">
-        <h1><a href="/">Europa</a></h1>
-        <hr>
-        <nav class="main-nav">
-            <ul class="nav-links">
-                <li class="nav-link" :class="{'active': url === '/'}"><a href="/">Home</a></li>
-                <li class="nav-link" :class="{'active': url.indexOf('/about') !== -1}"><a href="/about">About</a></li>
-                <li class="nav-link" :class="{'active': url.indexOf('/portfolio') !== -1}"><a href="/portfolio">Portfolio</a></li>
-                <li class="nav-link" :class="{'active': url.indexOf('/contact') !== -1}"><a href="/contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header class="main-header">
+    <h1>
+      <a href="/">Europa</a>
+    </h1>
+    <hr />
+    <nav class="main-nav">
+      <ul class="nav-links">
+        <li class="nav-link" :class="{'active': url === '/'}">
+          <a href="/">Home</a>
+        </li>
+        <li class="nav-link" :class="{'active': url.indexOf('/about') !== -1}">
+          <a href="/about">About</a>
+        </li>
+        <li class="nav-link" :class="{'active': url.indexOf('/skill') !== -1}">
+          <a href="/skill">Skill</a>
+        </li>
+        <li class="nav-link" :class="{'active': url.indexOf('/portfolio') !== -1}">
+          <a href="/portfolio">Portfolio</a>
+        </li>
+        <li class="nav-link" :class="{'active': url.indexOf('/contact') !== -1}">
+          <a href="/contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      url: ''
-    }
+      url: ""
+    };
   },
   mounted() {
     this.url = location.pathname;
   }
-}
+};
 </script>
 
 <style lang="scss">
