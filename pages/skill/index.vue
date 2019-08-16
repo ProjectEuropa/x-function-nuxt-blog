@@ -107,7 +107,7 @@
 
 <style lang="scss" scoped>
 .promos {
-  width: 800px;
+  max-width: 800px;
   margin: 0 auto;
   margin-top: 50px;
   margin-bottom: 50px;
@@ -115,7 +115,7 @@
   flex-wrap: wrap;
 }
 .promo {
-  width: 250px;
+  max-width: 250px;
   background: #0f1012;
   color: #f9f9f9;
   margin: 5px;
@@ -166,5 +166,10 @@ button {
   color: #f9f9f9;
   padding: 10px 37px;
   margin: 10px 0 20px 60px;
+}
+@media (max-width: 669px) {
+  .promos {
+    justify-content: center;
+  }
 }
 </style>
