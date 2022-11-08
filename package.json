@@ -19,7 +19,7 @@
     "email-validator": "^2.0.4",
     "fs": "0.0.1-security",
     "net": "^1.0.2",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.15.8",
     "particles.js": "^2.0.0",
     "request": "^2.88.0",
     "tls": "0.0.1",
