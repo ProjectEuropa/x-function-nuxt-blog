@@ -19,7 +19,7 @@
     "email-validator": "^2.0.4",
     "fs": "0.0.1-security",
     "net": "^1.0.2",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.8.1",
     "particles.js": "^2.0.0",
     "request": "^2.88.0",
     "tls": "0.0.1",
@@ -33,7 +33,7 @@
     "jest": "^24.1.0",
     "node-sass": "^4.12.0",
     "nodemon": "^1.18.9",
-    "sass-loader": "^7.2.0",
-    "vue-jest": "^3.0.3"
+    "sass-loader": "^13.2.0",
+    "vue-jest": "^4.0.1"
   }
 }
