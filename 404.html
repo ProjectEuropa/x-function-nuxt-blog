@@ -3,23 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact // Project Europa</title>
+    <title>404 Not Found // Project Europa</title>
     
-    <!-- SNS共有用メタタグ -->
-    <meta property="og:title" content="Contact // Project Europa">
-    <meta property="og:description" content="Team Project Europaへのお問い合わせページです。Webサイト・Webアプリケーション制作のご依頼やご質問はこちらからどうぞ。">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hp.project-europa.work/">
-    <meta property="og:image" content="https://hp.project-europa.work/images/ogp.jpeg">
-    <meta property="og:site_name" content="Project Europa">
-    <meta property="og:locale" content="ja_JP">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@projecteuropa">
-    <meta name="twitter:creator" content="@projecteuropa">
-    <meta name="twitter:title" content="Contact // Project Europa">
-    <meta name="twitter:description" content="Team Project Europaへのお問い合わせページです。Webサイト・Webアプリケーション制作のご依頼やご質問はこちらからどうぞ。">
-    <meta property="og:image" content="https://hp.project-europa.work/images/ogp.jpeg">
-
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&family=Rajdhani:wght@300;400;500&family=Electrolize&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -40,13 +25,13 @@
                 <a href="#">About</a>
                 <a href="#">Skill</a>
                 <a href="#">Portfolio</a>
-                <a href="/contact.html" class="active">Contact</a>
+                <a href="/contact.html">Contact</a>
             </nav>
         </div>
     </div>
 </header>
 
-<section class="contact-section">
+<section class="error-section">
     <div class="star-field" id="starField"></div>
     <div class="space-bg"></div>
     <div class="nebula"></div>
@@ -54,39 +39,23 @@
     <div class="nebula"></div>
 
     <div class="container">
-        <h1 class="page-title">CONTACT</h1>
+        <h1 class="page-title">ERROR 404</h1>
         
-        <div class="contact-container">
+        <div class="error-container">
             <div class="contact-header">
-                <span class="contact-header-icon">></span> MESSAGE TRANSMISSION
+                <span class="contact-header-icon">></span> LOCATION NOT FOUND
             </div>
             
             <div class="contact-content">
-                <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/form-submission-success.html">
-                    <input type="hidden" name="form-name" value="contact" />
-                    <p class="hidden">
-                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-                    </p>
+                <div class="error-message">
+                    <div class="error-code">404</div>
+                    <p>The requested coordinates do not match any known location in our system.</p>
+                    <p>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
                     
-                    <div class="form-group">
-                        <label for="name" class="form-label">NAME</label>
-                        <input type="text" id="name" name="name" class="form-input" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email" class="form-label">EMAIL</label>
-                        <input type="email" id="email" name="email" class="form-input" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message" class="form-label">MESSAGE</label>
-                        <textarea id="message" name="message" class="form-input" required></textarea>
-                    </div>
-
-                    <button type="button" id="showConfirmButton" class="submit-button">
-                        <span class="button-icon">></span> SEND MESSAGE
-                    </button>
-                </form>
+                    <a href="/" class="submit-button">
+                        <span class="button-icon">></span> RETURN TO HOME BASE
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -125,48 +94,6 @@
         </div>
     </div>
 </footer>
-
-<!-- モーダル -->
-<div class="modal-backdrop" id="confirmModal">
-    <div class="modal">
-        <div class="contact-header">
-            <span class="contact-header-icon">></span> CONFIRM TRANSMISSION
-        </div>
-        <div class="modal-body">
-            <h3 class="modal-title">以下の内容で送信します。確認してください：</h3>
-
-            <div class="confirm-data">
-                <div class="confirm-item">
-                    <span class="confirm-label">NAME:</span>
-                    <div class="confirm-value" id="confirmName"></div>
-                </div>
-
-                <div class="confirm-item">
-                    <span class="confirm-label">EMAIL:</span>
-                    <div class="confirm-value" id="confirmEmail"></div>
-                </div>
-
-                <div class="confirm-item">
-                    <span class="confirm-label">MESSAGE:</span>
-                    <div class="confirm-value" id="confirmMessage"></div>
-                </div>
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="modal-button cancel" id="cancelButton">Cancel</button>
-                <button type="button" class="modal-button confirm" id="confirmButton">
-                    <span class="button-icon">></span> Send
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- 通知 -->
-<div class="notification" id="notification">
-    <span class="notification-icon">></span>
-    <span class="notification-message" id="notificationMessage"></span>
-</div>
 
 <script src="./js/main.js"></script>
 </body>
