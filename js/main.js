@@ -212,3 +212,142 @@ window.addEventListener('load', () => {
         }
     }
 });
+
+// Skills ページ用の追加JavaScript
+
+document.addEventListener('DOMContentLoaded', function() {
+    // スクロールアニメーション
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.skill-card, .project-item');
+
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight;
+
+            if (elementPosition < screenPosition) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    };
+
+    // 初期実行
+    animateOnScroll();
+
+    // スクロールイベント
+    window.addEventListener('scroll', animateOnScroll);
+
+    // スキルカードのホバーエフェクト強化
+    const skillCards = document.querySelectorAll('.skill-card');
+
+    skillCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.skill-icon');
+            icon.style.animation = 'pulse 1s infinite';
+        });
+
+        card.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.skill-icon');
+            icon.style.animation = '';
+        });
+    });
+
+    // ページタイトルのタイピングアニメーション強化
+    const pageTitle = document.querySelector('.page-title');
+    if (pageTitle) {
+        pageTitle.classList.add('typing');
+
+        // タイピング終了後のカーソル点滅の追加
+        pageTitle.addEventListener('animationend', function() {
+            const cursor = document.createElement('span');
+            cursor.classList.add('cursor');
+            cursor.textContent = '|';
+            cursor.style.color = 'var(--color-primary)';
+            cursor.style.animation = 'blink 1s step-end infinite';
+            this.appendChild(cursor);
+        });
+    }
+
+    // 資格セクションの特殊効果
+    const certNote = document.querySelector('.certification-note');
+    if (certNote) {
+        certNote.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.02)';
+            this.style.boxShadow = '0 0 20px rgba(38, 218, 253, 0.4)';
+        });
+
+        certNote.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            this.style.boxShadow = 'none';
+        });
+    }
+
+    // プロジェクト項目のホバーエフェクト
+    const projectItems = document.querySelectorAll('.project-item');
+    projectItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            const tech = this.querySelector('.project-tech');
+            tech.style.color = 'var(--color-primary)';
+            tech.style.borderTopColor = 'var(--color-primary)';
+        });
+
+        item.addEventListener('mouseleave', function() {
+            const tech = this.querySelector('.project-tech');
+            tech.style.color = '';
+            tech.style.borderTopColor = '';
+        });
+    });
+
+    // 星を生成（すでに main.js で定義されている関数を利用）
+    if (typeof createStars === 'function') {
+        createStars();
+    } else {
+        // createStars関数が存在しない場合のフォールバック
+        console.log('Creating stars manually...');
+        const starField = document.getElementById('starField');
+        if (starField) {
+            const starCount = 250;
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                const sizeClass = Math.random() < 0.6 ? 'small' : (Math.random() < 0.9 ? 'medium' : 'large');
+                star.classList.add('star', sizeClass);
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.animationDelay = `${Math.random() * 3}s`;
+                starField.appendChild(star);
+            }
+        }
+    }
+});
+
+// ページスクロール時のヘッダー変更
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+// 画面サイズ変更時の調整
+window.addEventListener('resize', function() {
+    // レスポンシブ対応のための処理
+    const skillCards = document.querySelectorAll('.skill-card');
+    if (window.innerWidth <= 480) {
+        skillCards.forEach(card => {
+            const desc = card.querySelector('.skill-desc');
+            if (desc && desc.textContent.length > 100) {
+                desc.dataset.fullText = desc.textContent;
+                desc.textContent = desc.textContent.substring(0, 100) + '...';
+            }
+        });
+    } else {
+        skillCards.forEach(card => {
+            const desc = card.querySelector('.skill-desc');
+            if (desc && desc.dataset.fullText) {
+                desc.textContent = desc.dataset.fullText;
+            }
+        });
+    }
+});
