@@ -9,29 +9,6 @@ A space-themed website for Project Europa with contact form functionality integr
 - Slack integration for receiving contact form submissions
 - Animated background with stars and nebula effects
 
-## Setup
-
-1. Clone the repository
-2. Set up the Slack Webhook URL:
-   - Create a Slack App in your workspace
-   - Enable Incoming Webhooks
-   - Create a new webhook for your channel
-   - Set the webhook URL as an environment variable named `SLACK_WEBHOOK_URL`
-
-## Local Development
-
-```bash
-# Start a local server
-python -m http.server 8000
-```
-
-Then visit `http://localhost:8000` in your browser.
-
-## Environment Variables
-
-For the contact form to work properly, you need to set up the following environment variable:
-
-- `SLACK_WEBHOOK_URL`: Your Slack webhook URL for receiving messages
 
 ## Deployment
 
