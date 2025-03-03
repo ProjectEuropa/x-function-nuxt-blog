@@ -28,70 +28,73 @@ function createStars() {
 
 // ページロード時に各要素をアニメーション表示
 function setupAnimations() {
-    document.querySelectorAll('.frame-line').forEach((line, index) => {
+    console.log('Setting up animations...');
+    
+    // フレームラインのアニメーション
+    const frameLines = document.querySelectorAll('.frame-line');
+    console.log('Frame lines found:', frameLines.length);
+    frameLines.forEach((line, index) => {
         line.style.animation = `line-appear 0.5s both`;
         line.style.animationDelay = `${0.3 + (index * 0.1)}s`;
     });
 
-    document.querySelector('.header-inner').style.animation = 'header-appear 0.5s both';
+    // ヘッダーのアニメーション - すべてのページで実行
+    const headerInner = document.querySelector('.header-inner');
+    console.log('Header inner found:', headerInner);
+    if (headerInner) {
+        headerInner.style.animation = 'header-appear 0.5s both';
+        headerInner.style.animationDelay = '0.1s';
+    }
 
-    // タイピングアニメーション
-    const typingElements = document.querySelectorAll('.typing');
-    typingElements.forEach((element, index) => {
-        const text = element.textContent;
-        element.textContent = '';
+    // ヘッダーラインのアニメーション
+    const headerLine = document.querySelector('.header-line');
+    if (headerLine) {
+        headerLine.style.animation = 'line-appear 0.6s both';
+        headerLine.style.animationDelay = '0.3s';
+    }
 
-        let charIndex = 0;
-        let delay = index * 1000; // 1つ目の要素の後に次の要素を開始
-
-        setTimeout(() => {
-            const typeInterval = setInterval(() => {
-                if (charIndex < text.length) {
-                    element.textContent += text.charAt(charIndex);
-                    charIndex++;
-                } else {
-                    clearInterval(typeInterval);
-                }
-            }, 50);
-        }, delay);
+    // ナビゲーションアニメーション
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach((link, index) => {
+        link.style.animation = 'text-appear 0.5s both';
+        link.style.animationDelay = `${0.5 + (index * 0.1)}s`;
     });
+
+    // タイピングアニメーションはCSSで処理されます
+    console.log('Animations setup complete');
 }
 
 // 通知を表示する関数
 function showNotification(message, type = 'success') {
     const notification = document.getElementById('notification');
-    if (!notification) return; // 要素が存在しない場合は処理をスキップ
-    
     const notificationMessage = document.getElementById('notificationMessage');
-
-    notification.className = 'notification ' + type;
-    notificationMessage.textContent = message;
-
-    // 表示
-    setTimeout(() => {
-        notification.classList.add('show');
-    }, 100);
-
-    // 一定時間後に非表示
-    setTimeout(() => {
-        notification.classList.remove('show');
-    }, 5000);
+    
+    if (notification && notificationMessage) {
+        notificationMessage.textContent = message;
+        notification.className = 'notification';
+        notification.classList.add(type);
+        notification.classList.add('active');
+        
+        setTimeout(() => {
+            notification.classList.remove('active');
+        }, 5000);
+    }
 }
 
 // モーダルを表示する関数
 function showModal() {
-    const confirmModal = document.getElementById('confirmModal');
-    if (!confirmModal) return; // 要素が存在しない場合は処理をスキップ
-    
-    confirmModal.classList.add('active');
+    const modal = document.getElementById('confirmModal');
+    if (modal) {
+        modal.classList.add('active');
+    }
 }
 
 // モーダルを非表示にする関数
 function hideModal() {
-    const confirmModal = document.getElementById('confirmModal');
-    if (!confirmModal) return; // 要素が存在しない場合は処理をスキップ
-    
-    confirmModal.classList.remove('active');
+    const modal = document.getElementById('confirmModal');
+    if (modal) {
+        modal.classList.remove('active');
+    }
 }
 
 // フォームデータを取得
@@ -143,69 +146,20 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// フォームデータを取得する関数
-function getFormData() {
-    return {
-        name: document.getElementById('name') ? document.getElementById('name').value : '',
-        email: document.getElementById('email') ? document.getElementById('email').value : '',
-        message: document.getElementById('message') ? document.getElementById('message').value : ''
-    };
-}
-
-// モーダルにデータを表示する関数
-function populateModalData(data) {
-    if (document.getElementById('confirmName')) {
-        document.getElementById('confirmName').textContent = data.name;
-    }
-    if (document.getElementById('confirmEmail')) {
-        document.getElementById('confirmEmail').textContent = data.email;
-    }
-    if (document.getElementById('confirmMessage')) {
-        document.getElementById('confirmMessage').textContent = data.message;
-    }
-}
-
-// モーダルを表示する関数
-function showModal() {
-    const modal = document.getElementById('confirmModal');
-    if (modal) {
-        modal.classList.add('active');
-    }
-}
-
-// モーダルを非表示にする関数
-function hideModal() {
-    const modal = document.getElementById('confirmModal');
-    if (modal) {
-        modal.classList.remove('active');
-    }
-}
-
-// 通知を表示する関数
-function showNotification(message, type = 'success') {
-    const notification = document.getElementById('notification');
-    const notificationMessage = document.getElementById('notificationMessage');
-    
-    if (notification && notificationMessage) {
-        notificationMessage.textContent = message;
-        notification.className = 'notification';
-        notification.classList.add(type);
-        notification.classList.add('active');
-        
-        setTimeout(() => {
-            notification.classList.remove('active');
-        }, 5000);
-    }
-}
+// DOMContentLoadedイベントでアニメーションを設定
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM fully loaded');
+    setupAnimations();
+});
 
 // ページ読み込み時の処理
 window.addEventListener('load', () => {
+    console.log('Window loaded');
+    // 星を生成（star-fieldがある場合のみ）
     createStars();
     
-    // index.htmlのみで実行する処理
-    if (document.querySelector('.hero-content')) {
-        setupAnimations();
-    }
+    // すべてのページでアニメーションを設定（念のため再度実行）
+    setupAnimations();
 
     // すべての背景を強制的に透明にする
     const transparentElements = document.querySelectorAll('.frame, .frame-content, span, p, h1, h2, h3, div');
