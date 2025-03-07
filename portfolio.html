@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Project Europa</title>
+
+    <!-- SNS共有用メタタグ -->
+    <meta property="og:title" content="Portfolio - Project Europa // Cybernetic Interface">
+    <meta property="og:description" content="Team Project Europaのポートフォリオと実績のご紹介です。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hp.project-europa.work/portfolio.html">
+    <meta property="og:image" content="https://hp.project-europa.work/images/ogp.jpeg">
+    <meta property="og:site_name" content="Project Europa">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@projecteuropa">
+    <meta name="twitter:creator" content="@projecteuropa">
+    <meta name="twitter:title" content="Portfolio - Project Europa // Cybernetic Interface">
+    <meta name="twitter:description" content="Team Project Europaのポートフォリオと実績のご紹介です。">
+
+    <!-- ファビコン -->
+    <link rel="icon" href="./images/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="./images/favicon/favicon.ico">
+    <link rel="manifest" href="./images/favicon/site.webmanifest">
+    <meta name="theme-color" content="#26DAFD">
+
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&family=Rajdhani:wght@300;400;500&family=Electrolize&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/main.js" defer></script>
+</head>
+<body>
+<div class="noise"></div>
+<div class="scanline"></div>
+
+<header class="header">
+    <div class="container">
+        <div class="header-inner">
+            <div class="logo-container">
+                <div class="logo-text-main typing">EUROPA</div>
+                <div class="logo-text-sub typing">Exploration Mission Interface</div>
+            </div>
+            <div class="header-line"></div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="#">About</a>
+                <a href="/skill.html">Skill</a>
+                <a href="/portfolio.html" class="active">Portfolio</a>
+                <a href="/contact.html">Contact</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<section class="portfolio-section">
+    <div class="star-field" id="starField"></div>
+    <div class="space-bg"></div>
+    <div class="nebula"></div>
+    <div class="nebula"></div>
+    <div class="nebula"></div>
+    <div class="container">
+        <div class="frame">
+            <div class="frame-corner frame-corner-top-left"></div>
+            <div class="frame-corner frame-corner-top-right"></div>
+            <div class="frame-corner frame-corner-bottom-left"></div>
+            <div class="frame-corner frame-corner-bottom-right"></div>
+            <div class="frame-line frame-line-left"></div>
+            <div class="frame-line frame-line-right"></div>
+            <div class="frame-heading">Portfolio Database</div>
+            <div class="frame-content">
+                <h1 class="page-title typing">Project Experience Overview</h1>
+                <p class="service-text">Team Project Europaが手がけたプロジェクトと実績をご紹介します。クラウドインフラ構築、サーバーレスアプリケーション開発、CI/CD導入など、様々な分野での実績があります。</p>
+            </div>
+        </div>
+
+        <!-- プロジェクト経験セクション -->
+        <div class="frame">
+            <div class="frame-corner frame-corner-top-left"></div>
+            <div class="frame-corner frame-corner-top-right"></div>
+            <div class="frame-corner frame-corner-bottom-left"></div>
+            <div class="frame-corner frame-corner-bottom-right"></div>
+            <div class="frame-line frame-line-left"></div>
+            <div class="frame-line frame-line-right"></div>
+            <div class="frame-heading">Project Experience</div>
+            <div class="frame-content">
+                <div class="section-header">
+                    <h2 class="section-title">Recent Projects</h2>
+                </div>
+
+                <div class="project-list">
+                    <div class="project-item">
+                        <h3 class="project-title">Enterprise Cloud Migration</h3>
+                        <p class="project-desc">Large-scale migration of on-premises infrastructure to AWS, including design of multi-region, highly available architecture with disaster recovery capabilities.</p>
+                        <p class="project-desc-jp">オンプレミスインフラストラクチャからAWSへの大規模移行。複数リージョンにまたがる高可用性アーキテクチャと災害復旧機能の設計を含む。</p>
+                        <div class="project-tech">AWS / CloudFormation / Transit Gateway / EKS / Aurora / DynamoDB</div>
+                    </div>
+
+                    <div class="project-item">
+                        <h3 class="project-title">Serverless E-commerce Platform</h3>
+                        <p class="project-desc">Development of a fully serverless e-commerce platform with real-time inventory management, secure payment processing, and personalized recommendations.</p>
+                        <p class="project-desc-jp">リアルタイム在庫管理、安全な決済処理、パーソナライズされたレコメンデーションを備えた完全サーバーレスEコマースプラットフォームの開発。</p>
+                        <div class="project-tech">AWS Lambda / API Gateway / DynamoDB / Cognito / Amplify / Vue.js</div>
+                    </div>
+
+                    <div class="project-item">
+                        <h3 class="project-title">CI/CD Pipeline Modernization</h3>
+                        <p class="project-desc">Implementation of modern CI/CD practices for a financial services company, reducing deployment time from days to minutes and enabling multiple daily releases.</p>
+                        <p class="project-desc-jp">金融サービス企業向けのモダンなCI/CD実践の導入。デプロイ時間を日単位から分単位に短縮し、1日に複数回のリリースを可能に。</p>
+                        <div class="project-tech">AWS CodePipeline / CodeBuild / CloudFormation / GitHub Actions / Docker / ECS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 詳細プロジェクト情報 -->
+        <div class="frame">
+            <div class="frame-corner frame-corner-top-left"></div>
+            <div class="frame-corner frame-corner-top-right"></div>
+            <div class="frame-corner frame-corner-bottom-left"></div>
+            <div class="frame-corner frame-corner-bottom-right"></div>
+            <div class="frame-line frame-line-left"></div>
+            <div class="frame-line frame-line-right"></div>
+            <div class="frame-heading">Project Details</div>
+            <div class="frame-content">
+                <div class="section-header">
+                    <h2 class="section-title">Technical Achievements</h2>
+                </div>
+
+                <div class="achievement-list">
+                    <div class="achievement-item">
+                        <div class="achievement-header">
+                            <div class="achievement-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12,3C7.58,3 4,4.79 4,7C4,9.21 7.58,11 12,11C16.42,11 20,9.21 20,7C20,4.79 16.42,3 12,3M4,9V12C4,14.21 7.58,16 12,16C16.42,16 20,14.21 20,12V9C20,11.21 16.42,13 12,13C7.58,13 4,11.21 4,9M4,14V17C4,19.21 7.58,21 12,21C16.42,21 20,19.21 20,17V14C20,16.21 16.42,18 12,18C7.58,18 4,16.21 4,14Z" />
+                                </svg>
+                            </div>
+                            <h3 class="achievement-title">高可用性マイクロサービスアーキテクチャの実現</h3>
+                        </div>
+                        <p class="achievement-desc">ECSとAWS Fargateを利用したコンテナベースのマイクロサービスアーキテクチャを構築。ApacheJmeterによる負荷テストでも99.99%の可用性を実現。また、オートスケーリングを適切に設定し、コスト最適化も同時に達成しました。</p>
+                        <div class="achievement-tech">AWS ECS / Fargate / CloudWatch / API Gateway</div>
+                    </div>
+
+                    <div class="achievement-item">
+                        <div class="achievement-header">
+                            <div class="achievement-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M17,22V20H20V17H22V20.5C22,21.32 21.32,22 20.5,22H17M7,22H3.5C2.68,22 2,21.32 2,20.5V17H4V20H7V22M17,2H20.5C21.32,2 22,2.68 22,3.5V7H20V4H17V2M7,2V4H4V7H2V3.5C2,2.68 2.68,2 3.5,2H7M13,17.25C13,17.66 12.66,18 12.25,18H11.75C11.34,18 11,17.66 11,17.25V10.75C11,10.34 11.34,10 11.75,10H12.25C12.66,10 13,10.34 13,10.75V17.25M13,8.25C13,8.66 12.66,9 12.25,9H11.75C11.34,9 11,8.66 11,8.25V7.75C11,7.34 11.34,7 11.75,7H12.25C12.66,7 13,7.34 13,7.75V8.25Z" />
+                                </svg>
+                            </div>
+                            <h3 class="achievement-title">コスト効率の良いバックアップ・リカバリシステム</h3>
+                        </div>
+                        <p class="achievement-desc">AWS Backup と S3 Glacier Deep Archive を組み合わせた階層型バックアップ戦略を実装。コスト削減率30%を達成しながら、RPOとRTOの両方を改善することに成功しました。</p>
+                        <div class="achievement-tech">AWS Backup / S3 Glacier / Lambda / CloudWatch Events</div>
+                    </div>
+
+                    <div class="achievement-item">
+                        <div class="achievement-header">
+                            <div class="achievement-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5M17.13,17C15.92,18.85 14.11,20.24 12,20.92C9.89,20.24 8.08,18.85 6.87,17C6.53,16.5 6.24,16 6,15.47C6,13.82 8.71,12.47 12,12.47C15.29,12.47 18,13.79 18,15.47C17.76,16 17.47,16.5 17.13,17Z" />
+                                </svg>
+                            </div>
+                            <h3 class="achievement-title">PCI DSS準拠決済システムの開発</h3>
+                        </div>
+                        <p class="achievement-desc">PCI DSS準拠の決済システムをAWS上に構築。KMSを用いた暗号化、WAFによる保護、VPC設計など、セキュリティを最優先に考慮した設計を行いました。監査時には指摘事項ゼロで認証を取得。</p>
+                        <div class="achievement-tech">AWS KMS / WAF / Shield / VPC / Security Groups</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="frame">
+            <div class="frame-corner frame-corner-top-left"></div>
+            <div class="frame-corner frame-corner-top-right"></div>
+            <div class="frame-corner frame-corner-bottom-left"></div>
+            <div class="frame-corner frame-corner-bottom-right"></div>
+            <div class="frame-line frame-line-left"></div>
+            <div class="frame-line frame-line-right"></div>
+            <div class="frame-heading">Communication Links</div>
+            <div class="frame-content footer-content">
+                <div class="social-links">
+                    <a href="https://github.com/ProjectEuropa" class="social-link" target="_blank" rel="noopener noreferrer" title="GitHub">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+                        </svg>
+                    </a>
+                    <a href="https://qiita.com/ProjectEuropa" class="social-link" target="_blank" rel="noopener noreferrer" title="Qiita">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M7.1,19c-0.3,0-0.5-0.1-0.7-0.3c-0.2-0.2-0.3-0.4-0.3-0.7V6c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h2.1 c0.3,0,0.5,0.1,0.7,0.3c0.2,0.2,0.3,0.4,0.3,0.7v12c0,0.3-0.1,0.5-0.3,0.7C9.7,18.9,9.4,19,9.2,19H7.1z M14.8,19 c-0.3,0-0.5-0.1-0.7-0.3c-0.2-0.2-0.3-0.4-0.3-0.7v-5.3c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h2.1c0.3,0,0.5,0.1,0.7,0.3 c0.2,0.2,0.3,0.4,0.3,0.7V18c0,0.3-0.1,0.5-0.3,0.7c-0.2,0.2-0.4,0.3-0.7,0.3H14.8z M14.8,9.5c-0.8,0-1.5-0.3-2.1-0.8 c-0.6-0.6-0.8-1.2-0.8-2.1c0-0.8,0.3-1.5,0.8-2.1c0.6-0.6,1.2-0.8,2.1-0.8c0.8,0,1.5,0.3,2.1,0.8c0.6,0.6,0.8,1.2,0.8,2.1 c0,0.8-0.3,1.5-0.8,2.1C16.3,9.2,15.6,9.5,14.8,9.5z" />
+                        </svg>
+                    </a>
+                    <a href="https://zenn.dev/m2" class="social-link" target="_blank" rel="noopener noreferrer" title="Zenn">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M.264 23.771h4.984c.264 0 .498-.147.645-.352L19.614.874c.176-.293-.029-.645-.381-.645h-4.72c-.235 0-.44.117-.557.323L.03 23.361c-.088.176.029.41.234.41zM17.445 23.419l6.479-10.408c.205-.323-.029-.733-.41-.733h-4.691c-.176 0-.352.088-.44.235l-6.655 10.643c-.176.264.029.616.352.616h4.779c.234-.001.468-.118.586-.353z"/>
+                        </svg>
+                    </a>
+                </div>
+                <p class="copyright"> 2025 <span>Team Project Europa</span> // All Systems Operational</p>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

@@ -1582,3 +1582,170 @@ textarea.form-input {
         padding: 3px 6px;
     }
 }
+
+/* ポートフォリオページ用の追加スタイル */
+
+.portfolio-section {
+    position: relative;
+    min-height: calc(100vh - 200px);
+    padding: 50px 0;
+    overflow: hidden;
+}
+
+/* 詳細なプロジェクト実績スタイル */
+.achievement-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.achievement-item {
+    background-color: rgba(1, 11, 14, 0.6);
+    border: 1px solid rgba(38, 218, 253, 0.2);
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.achievement-item:hover {
+    border-color: var(--border-color);
+    box-shadow: var(--glow);
+    transform: translateY(-3px);
+}
+
+.achievement-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.achievement-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(38, 218, 253, 0.1);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+}
+
+.achievement-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: var(--color-primary);
+}
+
+.achievement-title {
+    font-family: var(--font-mono);
+    font-size: 18px;
+    color: var(--color-primary);
+    flex: 1;
+}
+
+.achievement-desc {
+    font-size: 14px;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.achievement-tech {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--color-secondary);
+    padding-top: 10px;
+    border-top: 1px solid rgba(38, 218, 253, 0.2);
+}
+
+/* アニメーション効果 */
+.achievement-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: achievement-appear 0.6s forwards;
+}
+
+@keyframes achievement-appear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* アニメーション遅延 */
+.achievement-item:nth-child(1) { animation-delay: 0.2s; }
+.achievement-item:nth-child(2) { animation-delay: 0.4s; }
+.achievement-item:nth-child(3) { animation-delay: 0.6s; }
+.achievement-item:nth-child(4) { animation-delay: 0.8s; }
+.achievement-item:nth-child(5) { animation-delay: 1s; }
+
+/* プロジェクトアイテムの強化スタイル */
+.project-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: linear-gradient(to bottom, var(--color-primary), transparent);
+    transition: height 0.4s ease;
+}
+
+.project-item:hover::before {
+    height: 100%;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .achievement-item {
+        padding: 15px;
+    }
+
+    .achievement-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .achievement-title {
+        font-size: 16px;
+    }
+
+    .achievement-desc {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .achievement-item {
+        padding: 12px;
+    }
+
+    .achievement-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .achievement-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .achievement-title {
+        font-size: 14px;
+    }
+
+    .achievement-desc {
+        font-size: 12px;
+    }
+
+    .achievement-tech {
+        font-size: 10px;
+    }
+}
