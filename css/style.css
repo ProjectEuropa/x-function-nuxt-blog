@@ -1749,3 +1749,376 @@ textarea.form-input {
         font-size: 10px;
     }
 }
+
+/* ===== Aboutページ用スタイル ===== */
+
+/* 基本コンテンツスタイル */
+.about-content {
+  margin-bottom: 2rem;
+}
+
+.about-text {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.05rem;
+}
+
+/* ミッションポイントセクション */
+.mission-points {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.mission-point {
+  background: rgba(38, 218, 253, 0.05);
+  border: 1px solid rgba(38, 218, 253, 0.3);
+  padding: 1.5rem;
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.mission-point:hover {
+  background: rgba(38, 218, 253, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.mission-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 1rem;
+}
+
+.mission-icon svg {
+  fill: #26DAFD;
+  width: 100%;
+  height: 100%;
+}
+
+.mission-point h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #26DAFD;
+  font-size: 1.3rem;
+}
+
+.mission-point p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+}
+
+/* チームメンバーセクション */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.team-member {
+  display: flex;
+  background: rgba(38, 218, 253, 0.05);
+  border: 1px solid rgba(38, 218, 253, 0.2);
+  padding: 1.5rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.team-member:hover {
+  background: rgba(38, 218, 253, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.member-avatar {
+  flex: 0 0 80px;
+  height: 80px;
+  position: relative;
+  margin-right: 1.5rem;
+}
+
+.avatar-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #26DAFD;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.avatar-initial {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(38, 218, 253, 0.1);
+  border-radius: 50%;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #26DAFD;
+}
+
+.member-info {
+  flex: 1;
+}
+
+.member-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
+  color: #26DAFD;
+}
+
+.member-role {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.member-desc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.member-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.member-skills span {
+  background: rgba(38, 218, 253, 0.1);
+  border: 1px solid rgba(38, 218, 253, 0.3);
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  font-family: 'Share Tech Mono', monospace;
+  color: #26DAFD;
+}
+
+/* 強みセクション */
+.strengths-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.strength-item {
+  background: rgba(38, 218, 253, 0.05);
+  border: 1px solid rgba(38, 218, 253, 0.2);
+  padding: 1.5rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.strength-item:hover {
+  background: rgba(38, 218, 253, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.strength-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 1rem;
+}
+
+.strength-icon svg {
+  fill: #26DAFD;
+  width: 100%;
+  height: 100%;
+}
+
+.strength-item h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+  color: #26DAFD;
+  font-size: 1.3rem;
+}
+
+.strength-item p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+/* 実績ハイライトセクション */
+.achievements-list {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.achievement-item {
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding: 1.5rem;
+  background: rgba(38, 218, 253, 0.05);
+  border: 1px solid rgba(38, 218, 253, 0.2);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.achievement-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.achievement-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.achievement-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: #26DAFD;
+}
+
+.achievement-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #26DAFD;
+  margin: 0;
+}
+
+.achievement-desc {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.achievement-tech {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-secondary);
+  padding-top: 10px;
+  border-top: 1px solid rgba(38, 218, 253, 0.2);
+}
+
+.achievement-year {
+  flex: 0 0 80px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.2rem;
+  color: #26DAFD;
+  padding-right: 1rem;
+}
+
+.achievement-content {
+  flex: 1;
+}
+
+.achievement-content h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+}
+
+/* View Full Portfolioボタンのスタイル */
+.view-more {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0 1rem;
+}
+
+.btn-more {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  background: rgba(38, 218, 253, 0.1);
+  border: 1px solid rgba(38, 218, 253, 0.3);
+  color: #26DAFD;
+  font-family: 'Share Tech Mono', monospace;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-more:hover {
+  background: rgba(38, 218, 253, 0.2);
+  box-shadow: 0 0 10px rgba(38, 218, 253, 0.4);
+  transform: translateY(-2px);
+}
+
+.achievement-content p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.view-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.btn-more {
+  display: inline-block;
+  background: rgba(38, 218, 253, 0.1);
+  border: 1px solid #26DAFD;
+  color: #26DAFD;
+  padding: 0.6rem 1.5rem;
+  border-radius: 4px;
+  font-family: 'Share Tech Mono', monospace;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-more:hover {
+  background: rgba(38, 218, 253, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(38, 218, 253, 0.2);
+}
+
+/* Aboutページ用レスポンシブ対応 */
+@media (max-width: 768px) {
+  .team-member {
+    flex-direction: column;
+  }
+  
+  .member-avatar {
+    margin: 0 auto 1.5rem;
+  }
+  
+  .member-info {
+    text-align: center;
+  }
+  
+  .member-skills {
+    justify-content: center;
+  }
+  
+  .achievement-item {
+    flex-direction: column;
+  }
+  
+  .achievement-year {
+    margin-bottom: 0.5rem;
+  }
+}
