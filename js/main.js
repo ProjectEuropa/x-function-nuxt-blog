@@ -2,12 +2,12 @@
 function createStars() {
     const starField = document.getElementById('starField');
     if (!starField) return; // 要素が存在しない場合は処理をスキップ
-    
+
     const starCount = 250; // 星の数
 
     for (let i = 0; i < starCount; i++) {
         const star = document.createElement('div');
-        
+
         // 星のサイズをランダムに設定（小・中・大）
         const sizeClass = Math.random() < 0.6 ? 'small' : (Math.random() < 0.9 ? 'medium' : 'large');
         star.classList.add('star', sizeClass);
@@ -29,7 +29,7 @@ function createStars() {
 // ページロード時に各要素をアニメーション表示
 function setupAnimations() {
     console.log('Setting up animations...');
-    
+
     // フレームラインのアニメーション
     const frameLines = document.querySelectorAll('.frame-line');
     console.log('Frame lines found:', frameLines.length);
@@ -68,13 +68,13 @@ function setupAnimations() {
 function showNotification(message, type = 'success') {
     const notification = document.getElementById('notification');
     const notificationMessage = document.getElementById('notificationMessage');
-    
+
     if (notification && notificationMessage) {
         notificationMessage.textContent = message;
         notification.className = 'notification';
         notification.classList.add(type);
         notification.classList.add('active');
-        
+
         setTimeout(() => {
             notification.classList.remove('active');
         }, 5000);
@@ -102,8 +102,10 @@ function getFormData() {
     const name = document.getElementById('name')?.value || '';
     const email = document.getElementById('email')?.value || '';
     const message = document.getElementById('message')?.value || '';
+    const fileInput = document.getElementById('file');
+    const fileName = fileInput && fileInput.files.length > 0 ? fileInput.files[0].name : '';
 
-    return { name, email, message };
+    return { name, email, message, fileName };
 }
 
 // モーダルにデータを表示
@@ -111,10 +113,12 @@ function populateModalData(data) {
     const confirmName = document.getElementById('confirmName');
     const confirmEmail = document.getElementById('confirmEmail');
     const confirmMessage = document.getElementById('confirmMessage');
-    
+    const confirmFile = document.getElementById('confirmFile');
+
     if (confirmName) confirmName.textContent = data.name;
     if (confirmEmail) confirmEmail.textContent = data.email;
     if (confirmMessage) confirmMessage.textContent = data.message;
+    if (confirmFile) confirmFile.textContent = data.fileName || 'No file selected';
 }
 
 // 送信中の表示を切り替え
@@ -157,7 +161,7 @@ window.addEventListener('load', () => {
     console.log('Window loaded');
     // 星を生成（star-fieldがある場合のみ）
     createStars();
-    
+
     // すべてのページでアニメーションを設定（念のため再度実行）
     setupAnimations();
 
@@ -166,31 +170,45 @@ window.addEventListener('load', () => {
     transparentElements.forEach(element => {
         element.style.background = 'transparent';
     });
-    
+
     // contact.htmlのフォーム処理
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
+        // ファイル選択時の処理
+        const fileInput = document.getElementById('file');
+        const fileNameDisplay = document.getElementById('fileNameDisplay');
+
+        if (fileInput && fileNameDisplay) {
+            fileInput.addEventListener('change', function() {
+                if (this.files.length > 0) {
+                    fileNameDisplay.textContent = this.files[0].name;
+                } else {
+                    fileNameDisplay.textContent = 'No file selected';
+                }
+            });
+        }
+
         // 「送信」ボタンのクリックイベント
         const showConfirmButton = document.getElementById('showConfirmButton');
         if (showConfirmButton) {
             showConfirmButton.addEventListener('click', function() {
                 // フォームデータを取得
                 const formData = getFormData();
-                
+
                 // フォームバリデーション
                 if (!formData.name || !formData.email || !formData.message) {
                     showNotification('すべての項目を入力してください', 'error');
                     return;
                 }
-                
+
                 // モーダルにデータを表示
                 populateModalData(formData);
-                
+
                 // モーダルを表示
                 showModal();
             });
         }
-        
+
         // キャンセルボタンの処理
         const cancelButton = document.getElementById('cancelButton');
         if (cancelButton) {
@@ -198,16 +216,36 @@ window.addEventListener('load', () => {
                 hideModal();
             });
         }
-        
+
         // 送信確認ボタンの処理
         const confirmButton = document.getElementById('confirmButton');
         if (confirmButton) {
             confirmButton.addEventListener('click', function() {
                 // モーダルを非表示
                 hideModal();
-                
-                // フォームを送信
-                contactForm.submit();
+
+                // Netlify Forms用のデータを準備
+                const formData = new FormData(contactForm);
+
+                // form-nameフィールドが確実に含まれるようにする
+                if (!formData.has('form-name')) {
+                    formData.append('form-name', 'contact');
+                }
+
+                // フォームを送信 (multipart/form-dataはheadersを指定しない)
+                fetch('/', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(() => {
+                    // 成功時の処理
+                    window.location.href = '/form-submission-success.html';
+                })
+                .catch((error) => {
+                    // エラー時の処理
+                    console.error('Form submission error:', error);
+                    showNotification('送信中にエラーが発生しました。もう一度お試しください。', 'error');
+                });
             });
         }
     }
