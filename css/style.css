@@ -1821,7 +1821,6 @@ textarea.form-input {
 }
 
 .team-member {
-  display: flex;
   background: rgba(38, 218, 253, 0.05);
   border: 1px solid rgba(38, 218, 253, 0.2);
   padding: 1.5rem;
@@ -1833,38 +1832,6 @@ textarea.form-input {
   background: rgba(38, 218, 253, 0.1);
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.member-avatar {
-  flex: 0 0 80px;
-  height: 80px;
-  position: relative;
-  margin-right: 1.5rem;
-}
-
-.avatar-frame {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 2px solid #26DAFD;
-  border-radius: 50%;
-  animation: pulse 2s infinite;
-}
-
-.avatar-initial {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(38, 218, 253, 0.1);
-  border-radius: 50%;
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 2rem;
-  font-weight: 600;
-  color: #26DAFD;
 }
 
 .member-info {
@@ -2099,15 +2066,12 @@ textarea.form-input {
 /* Aboutページ用レスポンシブ対応 */
 @media (max-width: 768px) {
   .team-member {
-    flex-direction: column;
-  }
-  
-  .member-avatar {
-    margin: 0 auto 1.5rem;
+    text-align: center;
   }
   
   .member-info {
     text-align: center;
+    width: 100%;
   }
   
   .member-skills {
@@ -2120,5 +2084,16 @@ textarea.form-input {
   
   .achievement-year {
     margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .member-name {
+    font-size: 1.2rem;
+  }
+  
+  .member-skills span {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
   }
 }
