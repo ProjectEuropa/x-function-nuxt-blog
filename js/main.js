@@ -102,8 +102,10 @@ function getFormData() {
     const name = document.getElementById('name')?.value || '';
     const email = document.getElementById('email')?.value || '';
     const message = document.getElementById('message')?.value || '';
+    const fileInput = document.getElementById('file');
+    const fileName = fileInput && fileInput.files.length > 0 ? fileInput.files[0].name : '';
 
-    return { name, email, message };
+    return { name, email, message, fileName };
 }
 
 // モーダルにデータを表示
@@ -111,10 +113,12 @@ function populateModalData(data) {
     const confirmName = document.getElementById('confirmName');
     const confirmEmail = document.getElementById('confirmEmail');
     const confirmMessage = document.getElementById('confirmMessage');
+    const confirmFile = document.getElementById('confirmFile');
 
     if (confirmName) confirmName.textContent = data.name;
     if (confirmEmail) confirmEmail.textContent = data.email;
     if (confirmMessage) confirmMessage.textContent = data.message;
+    if (confirmFile) confirmFile.textContent = data.fileName || 'No file selected';
 }
 
 // 送信中の表示を切り替え
@@ -170,6 +174,20 @@ window.addEventListener('load', () => {
     // contact.htmlのフォーム処理
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
+        // ファイル選択時の処理
+        const fileInput = document.getElementById('file');
+        const fileNameDisplay = document.getElementById('fileNameDisplay');
+
+        if (fileInput && fileNameDisplay) {
+            fileInput.addEventListener('change', function() {
+                if (this.files.length > 0) {
+                    fileNameDisplay.textContent = this.files[0].name;
+                } else {
+                    fileNameDisplay.textContent = 'No file selected';
+                }
+            });
+        }
+
         // 「送信」ボタンのクリックイベント
         const showConfirmButton = document.getElementById('showConfirmButton');
         if (showConfirmButton) {
@@ -214,11 +232,10 @@ window.addEventListener('load', () => {
                     formData.append('form-name', 'contact');
                 }
 
-                // フォームを送信
+                // フォームを送信 (multipart/form-dataはheadersを指定しない)
                 fetch('/', {
                     method: 'POST',
-                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                    body: new URLSearchParams(formData).toString()
+                    body: formData
                 })
                 .then(() => {
                     // 成功時の処理

@@ -1169,6 +1169,64 @@ textarea.form-input {
     resize: vertical;
 }
 
+/* Custom File Input Styling */
+.file-input-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Hide the default file input */
+.file-input-container input[type="file"] {
+    position: absolute;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Style the custom file button */
+.file-input-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(1, 11, 14, 0.8);
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    padding: 12px 15px;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 8px;
+}
+
+.file-input-button:hover {
+    background-color: rgba(38, 218, 253, 0.1);
+    box-shadow: 0 0 10px rgba(38, 218, 253, 0.4);
+}
+
+.file-input-button::before {
+    content: ">";
+    margin-right: 10px;
+    animation: blink 1.5s infinite;
+}
+
+/* Style the file name display */
+.file-name-display {
+    background-color: rgba(1, 11, 14, 0.8);
+    border: 1px solid var(--color-primary);
+    color: var(--text-color);
+    padding: 12px 15px;
+    font-family: var(--font-primary);
+    font-size: 16px;
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+}
+
 .submit-button {
     background-color: transparent;
     color: var(--color-primary);
@@ -2068,20 +2126,20 @@ textarea.form-input {
   .team-member {
     text-align: center;
   }
-  
+
   .member-info {
     text-align: center;
     width: 100%;
   }
-  
+
   .member-skills {
     justify-content: center;
   }
-  
+
   .achievement-item {
     flex-direction: column;
   }
-  
+
   .achievement-year {
     margin-bottom: 0.5rem;
   }
@@ -2091,7 +2149,7 @@ textarea.form-input {
   .member-name {
     font-size: 1.2rem;
   }
-  
+
   .member-skills span {
     font-size: 0.7rem;
     padding: 0.15rem 0.5rem;
