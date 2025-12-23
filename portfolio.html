@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +18,8 @@
     <meta name="twitter:site" content="@projecteuropa">
     <meta name="twitter:creator" content="@projecteuropa">
     <meta name="twitter:title" content="Portfolio - Project Europa // Cybernetic Interface">
-    <meta name="twitter:description" content="Team Project Europaのポートフォリオと実績のご紹介です。">
+    <meta name="twitter:description" content="Team Project Europaが手掛けた主要なプロジェクトの実績紹介です。">
+    <meta name="twitter:image" content="https://hp.project-europa.work/images/ogp.jpeg">
 
     <!-- ファビコン -->
     <link rel="icon" href="./images/favicon/favicon.svg" type="image/svg+xml">
@@ -25,197 +27,235 @@
     <link rel="manifest" href="./images/favicon/site.webmanifest">
     <meta name="theme-color" content="#26DAFD">
 
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&family=Rajdhani:wght@300;400;500&family=Electrolize&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&family=Rajdhani:wght@300;400;500&family=Electrolize&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/main.js" defer></script>
 </head>
+
 <body>
-<div class="noise"></div>
-<div class="scanline"></div>
+    <div class="noise"></div>
+    <div class="scanline"></div>
 
-<header class="header">
-    <div class="container">
-        <div class="header-inner">
-            <div class="logo-container">
-                <div class="logo-text-main typing">EUROPA</div>
-                <div class="logo-text-sub typing">Exploration Mission Interface</div>
-            </div>
-            <div class="header-line"></div>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="/about.html">About</a>
-                <a href="/skill.html">Skill</a>
-                <a href="/portfolio.html" class="active">Portfolio</a>
-                <a href="/contact.html">Contact</a>
-            </nav>
-        </div>
-    </div>
-</header>
-
-<section class="portfolio-section">
-    <div class="star-field" id="starField"></div>
-    <div class="space-bg"></div>
-    <div class="nebula"></div>
-    <div class="nebula"></div>
-    <div class="nebula"></div>
-    <div class="container">
-        <div class="frame">
-            <div class="frame-corner frame-corner-top-left"></div>
-            <div class="frame-corner frame-corner-top-right"></div>
-            <div class="frame-corner frame-corner-bottom-left"></div>
-            <div class="frame-corner frame-corner-bottom-right"></div>
-            <div class="frame-line frame-line-left"></div>
-            <div class="frame-line frame-line-right"></div>
-            <div class="frame-heading">Portfolio Database</div>
-            <div class="frame-content">
-                <h1 class="page-title typing">Project Experience Overview</h1>
-                <p class="service-text">Team Project Europaが手がけたプロジェクトと実績をご紹介します。クラウドインフラ構築、Webアプリケーション開発、CI/CD導入など、様々な分野での実績があります。</p>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo-container">
+                    <div class="logo-text-main typing">EUROPA</div>
+                    <div class="logo-text-sub typing">Exploration Mission Interface</div>
+                </div>
+                <div class="header-line"></div>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="/about.html">About</a>
+                    <a href="/skill.html">Skill</a>
+                    <a href="/portfolio.html" class="active">Portfolio</a>
+                    <a href="/contact.html">Contact</a>
+                </nav>
             </div>
         </div>
+    </header>
 
-        <!-- プロジェクト経験セクション -->
-        <div class="frame">
-            <div class="frame-corner frame-corner-top-left"></div>
-            <div class="frame-corner frame-corner-top-right"></div>
-            <div class="frame-corner frame-corner-bottom-left"></div>
-            <div class="frame-corner frame-corner-bottom-right"></div>
-            <div class="frame-line frame-line-left"></div>
-            <div class="frame-line frame-line-right"></div>
-            <div class="frame-heading">Project Experience</div>
-            <div class="frame-content">
-                <div class="section-header">
-                    <h2 class="section-title">Recent Projects</h2>
-                </div>
-
-                <div class="project-list">
-                    <div class="project-item">
-                        <h3 class="project-title">Enterprise Big Data Search System</h3>
-                        <p class="project-desc">Development of a high-performance search system for enterprise big data, providing real-time insights and analytics across multiple data sources with optimized query performance.</p>
-                        <p class="project-desc-jp">企業の大規模データに対する高性能検索システムの開発。複数のデータソースからリアルタイムの洞察と分析を提供し、クエリパフォーマンスを最適化。</p>
-                        <div class="project-tech">AWS ECS / Aurora MySQL / AWS CDK / Docker / Laravel 11.x / Next.js 13.x</div>
-                    </div>
-
-                    <div class="project-item">
-                        <h3 class="project-title">Google Maps Business Listings & Reviews Management Platform</h3>
-                        <p class="project-desc">Development of a centralized management platform to update information and respond to reviews across thousands of business locations on Google Maps, reducing management time by over 90%.</p>
-                        <p class="project-desc-jp">複数の大企業の数千店舗のGoogleMAP情報や口コミを一括管理するプラットフォームを開発。店舗管理時間を90%以上削減し、業務効率を大幅に向上。</p>
-                        <div class="project-tech">AWS EC2 / Aurora MySQL / Datadog / Docker / PHP 7.2 / Laravel5.5</div>
-                    </div>
-
-                    <div class="project-item">
-                        <h3 class="project-title">Real Estate Matching Platform Infrastructure Optimization</h3>
-                        <p class="project-desc">Optimization of infrastructure for a high-traffic real estate matching platform, migrating from EC2 to ECS with auto-scaling capabilities to handle significant traffic spikes.</p>
-                        <p class="project-desc-jp">高トラフィックの不動産マッチングプラットフォームのインフラ最適化。EC2からECSへの移行とオートスケーリングの導入により、トラフィックスパイクに対応。</p>
-                        <div class="project-tech">AWS ECS / EC2 / Aurora PostgreSQL / Terraform / Ansible / Docker / Ruby 3.2 / Ruby on Rails 7.1</div>
-                    </div>
+    <section class="portfolio-section">
+        <div class="star-field" id="starField"></div>
+        <div class="space-bg"></div>
+        <div class="nebula"></div>
+        <div class="nebula"></div>
+        <div class="nebula"></div>
+        <div class="container">
+            <div class="frame">
+                <div class="frame-corner frame-corner-top-left"></div>
+                <div class="frame-corner frame-corner-top-right"></div>
+                <div class="frame-corner frame-corner-bottom-left"></div>
+                <div class="frame-corner frame-corner-bottom-right"></div>
+                <div class="frame-line frame-line-left"></div>
+                <div class="frame-line frame-line-right"></div>
+                <div class="frame-heading">Portfolio Database</div>
+                <div class="frame-content">
+                    <h1 class="page-title typing">Project Experience Overview</h1>
+                    <p class="service-text">Team Project
+                        Europaが手がけたプロジェクトと実績をご紹介します。クラウドインフラ構築、Webアプリケーション開発、CI/CD導入など、様々な分野での実績があります。</p>
                 </div>
             </div>
-        </div>
 
-        <!-- 詳細プロジェクト情報 -->
-        <div class="frame">
-            <div class="frame-corner frame-corner-top-left"></div>
-            <div class="frame-corner frame-corner-top-right"></div>
-            <div class="frame-corner frame-corner-bottom-left"></div>
-            <div class="frame-corner frame-corner-bottom-right"></div>
-            <div class="frame-line frame-line-left"></div>
-            <div class="frame-line frame-line-right"></div>
-            <div class="frame-heading">Technical Achievements</div>
-            <div class="frame-content">
-                <div class="section-header">
-                    <h2 class="section-title">Key Technical Accomplishments</h2>
-                </div>
+            <!-- プロジェクト経験セクション -->
+            <div class="frame">
+                <div class="frame-corner frame-corner-top-left"></div>
+                <div class="frame-corner frame-corner-top-right"></div>
+                <div class="frame-corner frame-corner-bottom-left"></div>
+                <div class="frame-corner frame-corner-bottom-right"></div>
+                <div class="frame-line frame-line-left"></div>
+                <div class="frame-line frame-line-right"></div>
+                <div class="frame-heading">Project Experience</div>
+                <div class="frame-content">
+                    <div class="section-header">
+                        <h2 class="section-title">Recent Projects</h2>
+                    </div>
 
-                <div class="achievements-list">
-                    <div class="achievement-item">
-                        <div class="achievement-header">
-                            <div class="achievement-icon">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M17.55,11.2C17.32,10.9 17.05,10.64 16.79,10.38C16.14,9.78 15.39,9.35 14.76,8.72C13.3,7.26 13,4.85 13.91,3C13,3.23 12.16,3.75 11.46,4.32C8.92,6.4 7.92,10.07 9.12,13.22C9.16,13.32 9.2,13.42 9.2,13.55C9.2,13.77 9.05,13.97 8.85,14.05C8.63,14.15 8.39,14.09 8.21,13.93C8.15,13.88 8.11,13.83 8.06,13.76C6.96,12.33 6.78,10.28 7.53,8.64C5.89,10 5,12.3 5.14,14.47C5.18,14.97 5.24,15.47 5.41,15.97C5.55,16.57 5.81,17.17 6.13,17.7C7.17,19.43 9,20.67 10.97,20.92C13.07,21.19 15.32,20.8 16.93,19.32C18.73,17.66 19.38,15 18.43,12.72L18.3,12.46C18.1,12 17.83,11.59 17.5,11.21L17.55,11.2M14.45,17.5C14.17,17.74 13.72,18 13.37,18.1C12.27,18.5 11.17,17.94 10.5,17.28C11.69,17 12.39,16.12 12.59,15.23C12.76,14.43 12.45,13.77 12.32,13C12.2,12.26 12.22,11.63 12.5,10.94C12.67,11.32 12.87,11.7 13.1,12C13.86,13 15.05,13.44 15.3,14.8C15.34,14.94 15.36,15.08 15.36,15.23C15.39,16.05 15.04,16.95 14.44,17.5H14.45Z" />
-                                </svg>
-                            </div>
-                            <h3 class="achievement-title">レガシーシステムのモダナイゼーション</h3>
+                    <div class="project-list">
+                        <div class="project-item">
+                            <h3 class="project-title">Enterprise Big Data Search System</h3>
+                            <p class="project-desc">Development of a high-performance search system for enterprise big
+                                data, providing real-time insights and analytics across multiple data sources with
+                                optimized query performance.</p>
+                            <p class="project-desc-jp">
+                                企業の大規模データに対する高性能検索システムの開発。複数のデータソースからリアルタイムの洞察と分析を提供し、クエリパフォーマンスを最適化。</p>
+                            <div class="project-tech">AWS ECS / Aurora MySQL / AWS CDK / Docker / Laravel 11.x / Next.js
+                                13.x</div>
                         </div>
-                        <p class="achievement-desc">PHP7.0からPHP8.4へのアップグレード、Laravel5.1からLaravel11.xへのマイグレーション、Vue.js2からNext.jsへのリプレイスを実施。レガシーシステムを最新技術でリニューアルし、パフォーマンスとセキュリティを大幅に向上させました。</p>
-                        <div class="achievement-tech">PHP 8.4 / Laravel 11.x / Next.js / TypeScript / Docker / GitHub Actions</div>
-                    </div>
-                    
-                    <div class="achievement-item">
-                        <div class="achievement-header">
-                            <div class="achievement-icon">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5M17.13,17C15.92,18.85 14.11,20.24 12,20.92C9.89,20.24 8.08,18.85 6.87,17C6.53,16.5 6.24,16 6,15.47C6,13.82 8.71,12.47 12,12.47C15.29,12.47 18,13.79 18,15.47C17.76,16 17.47,16.5 17.13,17Z" />
-                                </svg>
+
+                        <div class="project-item">
+                            <h3 class="project-title">Google Maps Business Listings & Reviews Management Platform</h3>
+                            <p class="project-desc">Development of a centralized management platform to update
+                                information and respond to reviews across thousands of business locations on Google
+                                Maps, reducing management time by over 90%.</p>
+                            <p class="project-desc-jp">
+                                複数の大企業の数千店舗のGoogleMAP情報や口コミを一括管理するプラットフォームを開発。店舗管理時間を90%以上削減し、業務効率を大幅に向上。</p>
+                            <div class="project-tech">AWS EC2 / Aurora MySQL / Datadog / Docker / PHP 7.2 / Laravel5.5
                             </div>
-                            <h3 class="achievement-title">高性能ビッグデータ検索エンジンの開発</h3>
                         </div>
-                        <p class="achievement-desc">AWS CDKとAurora MySQLを活用し、数十万件のデータベースレコードを1〜2秒で検索できる高速システムを実現。複数のデータソースを統合し、インデックス最適化とキャッシュ戦略を駆使して応答時間を劇的に改善。Next.jsとLaravelによる直感的なUI/UXも実装。</p>
-                        <div class="achievement-tech">AWS ECS / Aurora MySQL / AWS CDK / Laravel 11.x / Next.js 13.x / Redis</div>
+
+                        <div class="project-item">
+                            <h3 class="project-title">Real Estate Matching Platform Infrastructure Optimization</h3>
+                            <p class="project-desc">Optimization of infrastructure for a high-traffic real estate
+                                matching platform, migrating from EC2 to ECS with auto-scaling capabilities to handle
+                                significant traffic spikes.</p>
+                            <p class="project-desc-jp">
+                                高トラフィックの不動産マッチングプラットフォームのインフラ最適化。EC2からECSへの移行とオートスケーリングの導入により、トラフィックスパイクに対応。</p>
+                            <div class="project-tech">AWS ECS / EC2 / Aurora PostgreSQL / Terraform / Ansible / Docker /
+                                Ruby 3.2 / Ruby on Rails 7.1</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 詳細プロジェクト情報 -->
+            <div class="frame">
+                <div class="frame-corner frame-corner-top-left"></div>
+                <div class="frame-corner frame-corner-top-right"></div>
+                <div class="frame-corner frame-corner-bottom-left"></div>
+                <div class="frame-corner frame-corner-bottom-right"></div>
+                <div class="frame-line frame-line-left"></div>
+                <div class="frame-line frame-line-right"></div>
+                <div class="frame-heading">Technical Achievements</div>
+                <div class="frame-content">
+                    <div class="section-header">
+                        <h2 class="section-title">Key Technical Accomplishments</h2>
                     </div>
 
-                    <div class="achievement-item">
-                        <div class="achievement-header">
-                            <div class="achievement-icon">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M12,3C7.58,3 4,4.79 4,7C4,9.21 7.58,11 12,11C16.42,11 20,9.21 20,7C20,4.79 16.42,3 12,3M4,9V12C4,14.21 7.58,16 12,16C16.42,16 20,14.21 20,12V9C20,11.21 16.42,13 12,13C7.58,13 4,11.21 4,9M4,14V17C4,19.21 7.58,21 12,21C16.42,21 20,19.21 20,17V14C20,16.21 16.42,18 12,18C7.58,18 4,16.21 4,14Z" />
-                                </svg>
+                    <div class="achievements-list">
+                        <div class="achievement-item">
+                            <div class="achievement-header">
+                                <div class="achievement-icon">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M17.55,11.2C17.32,10.9 17.05,10.64 16.79,10.38C16.14,9.78 15.39,9.35 14.76,8.72C13.3,7.26 13,4.85 13.91,3C13,3.23 12.16,3.75 11.46,4.32C8.92,6.4 7.92,10.07 9.12,13.22C9.16,13.32 9.2,13.42 9.2,13.55C9.2,13.77 9.05,13.97 8.85,14.05C8.63,14.15 8.39,14.09 8.21,13.93C8.15,13.88 8.11,13.83 8.06,13.76C6.96,12.33 6.78,10.28 7.53,8.64C5.89,10 5,12.3 5.14,14.47C5.18,14.97 5.24,15.47 5.41,15.97C5.55,16.57 5.81,17.17 6.13,17.7C7.17,19.43 9,20.67 10.97,20.92C13.07,21.19 15.32,20.8 16.93,19.32C18.73,17.66 19.38,15 18.43,12.72L18.3,12.46C18.1,12 17.83,11.59 17.5,11.21L17.55,11.2M14.45,17.5C14.17,17.74 13.72,18 13.37,18.1C12.27,18.5 11.17,17.94 10.5,17.28C11.69,17 12.39,16.12 12.59,15.23C12.76,14.43 12.45,13.77 12.32,13C12.2,12.26 12.22,11.63 12.5,10.94C12.67,11.32 12.87,11.7 13.1,12C13.86,13 15.05,13.44 15.3,14.8C15.34,14.94 15.36,15.08 15.36,15.23C15.39,16.05 15.04,16.95 14.44,17.5H14.45Z" />
+                                    </svg>
+                                </div>
+                                <h3 class="achievement-title">レガシーシステムのモダナイゼーション</h3>
                             </div>
-                            <h3 class="achievement-title">自動化されたCI/CDパイプラインと高品質テスト体制の構築</h3>
+                            <p class="achievement-desc">
+                                PHP7.0からPHP8.4へのアップグレード、Laravel5.1からLaravel11.xへのマイグレーション、Vue.js2からNext.jsへのリプレイスを実施。レガシーシステムを最新技術でリニューアルし、パフォーマンスとセキュリティを大幅に向上させました。
+                            </p>
+                            <div class="achievement-tech">PHP 8.4 / Laravel 11.x / Next.js / TypeScript / Docker /
+                                GitHub Actions</div>
                         </div>
-                        <p class="achievement-desc">GitHub ActionsによるCI/CD自動化とPlaywrightを用いたE2Eテストの導入。テスト失敗時にはSlackに自動通知し、動画で問題を確認できる仕組みを構築。また、ReviewdogとRubocopによるコードレビュー自動化で品質向上と工数削減を実現。</p>
-                        <div class="achievement-tech">GitHub Actions / Playwright / Reviewdog / Rubocop / Terraform / Docker</div>
-                    </div>
 
-                    <div class="achievement-item">
-                        <div class="achievement-header">
-                            <div class="achievement-icon">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M17,22V20H20V17H22V20.5C22,21.32 21.32,22 20.5,22H17M7,22H3.5C2.68,22 2,21.32 2,20.5V17H4V20H7V22M17,2H20.5C21.32,2 22,2.68 22,3.5V7H20V4H17V2M7,2V4H4V7H2V3.5C2,2.68 2.68,2 3.5,2H7M13,17.25C13,17.66 12.66,18 12.25,18H11.75C11.34,18 11,17.66 11,17.25V10.75C11,10.34 11.34,10 11.75,10H12.25C12.66,10 13,10.34 13,10.75V17.25M13,8.25C13,8.66 12.66,9 12.25,9H11.75C11.34,9 11,8.66 11,8.25V7.75C11,7.34 11.34,7 11.75,7H12.25C12.66,7 13,7.34 13,7.75V8.25Z" />
-                                </svg>
+                        <div class="achievement-item">
+                            <div class="achievement-header">
+                                <div class="achievement-icon">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5M17.13,17C15.92,18.85 14.11,20.24 12,20.92C9.89,20.24 8.08,18.85 6.87,17C6.53,16.5 6.24,16 6,15.47C6,13.82 8.71,12.47 12,12.47C15.29,12.47 18,13.79 18,15.47C17.76,16 17.47,16.5 17.13,17Z" />
+                                    </svg>
+                                </div>
+                                <h3 class="achievement-title">高性能ビッグデータ検索エンジンの開発</h3>
                             </div>
-                            <h3 class="achievement-title">包括的な監視・障害対応システムの構築</h3>
+                            <p class="achievement-desc">AWS CDKとAurora
+                                MySQLを活用し、数十万件のデータベースレコードを1〜2秒で検索できる高速システムを実現。複数のデータソースを統合し、インデックス最適化とキャッシュ戦略を駆使して応答時間を劇的に改善。Next.jsとLaravelによる直感的なUI/UXも実装。
+                            </p>
+                            <div class="achievement-tech">AWS ECS / Aurora MySQL / AWS CDK / Laravel 11.x / Next.js 13.x
+                                / Redis</div>
                         </div>
-                        <p class="achievement-desc">DatadogとPagerDutyを連携させた監視体制を構築。エラー発生時のSlack通知自動化、クリティカル障害時の電話連絡自動化により、障害検知から復旧までの時間を大幅に短縮。障害対応を受動的から能動的に転換させました。</p>
-                        <div class="achievement-tech">Datadog / PagerDuty / Slack API / AWS CloudWatch</div>
+
+                        <div class="achievement-item">
+                            <div class="achievement-header">
+                                <div class="achievement-icon">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12,3C7.58,3 4,4.79 4,7C4,9.21 7.58,11 12,11C16.42,11 20,9.21 20,7C20,4.79 16.42,3 12,3M4,9V12C4,14.21 7.58,16 12,16C16.42,16 20,14.21 20,12V9C20,11.21 16.42,13 12,13C7.58,13 4,11.21 4,9M4,14V17C4,19.21 7.58,21 12,21C16.42,21 20,19.21 20,17V14C20,16.21 16.42,18 12,18C7.58,18 4,16.21 4,14Z" />
+                                    </svg>
+                                </div>
+                                <h3 class="achievement-title">自動化されたCI/CDパイプラインと高品質テスト体制の構築</h3>
+                            </div>
+                            <p class="achievement-desc">GitHub
+                                ActionsによるCI/CD自動化とPlaywrightを用いたE2Eテストの導入。テスト失敗時にはSlackに自動通知し、動画で問題を確認できる仕組みを構築。また、ReviewdogとRubocopによるコードレビュー自動化で品質向上と工数削減を実現。
+                            </p>
+                            <div class="achievement-tech">GitHub Actions / Playwright / Reviewdog / Rubocop / Terraform
+                                / Docker</div>
+                        </div>
+
+                        <div class="achievement-item">
+                            <div class="achievement-header">
+                                <div class="achievement-icon">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M17,22V20H20V17H22V20.5C22,21.32 21.32,22 20.5,22H17M7,22H3.5C2.68,22 2,21.32 2,20.5V17H4V20H7V22M17,2H20.5C21.32,2 22,2.68 22,3.5V7H20V4H17V2M7,2V4H4V7H2V3.5C2,2.68 2.68,2 3.5,2H7M13,17.25C13,17.66 12.66,18 12.25,18H11.75C11.34,18 11,17.66 11,17.25V10.75C11,10.34 11.34,10 11.75,10H12.25C12.66,10 13,10.34 13,10.75V17.25M13,8.25C13,8.66 12.66,9 12.25,9H11.75C11.34,9 11,8.66 11,8.25V7.75C11,7.34 11.34,7 11.75,7H12.25C12.66,7 13,7.34 13,7.75V8.25Z" />
+                                    </svg>
+                                </div>
+                                <h3 class="achievement-title">包括的な監視・障害対応システムの構築</h3>
+                            </div>
+                            <p class="achievement-desc">
+                                DatadogとPagerDutyを連携させた監視体制を構築。エラー発生時のSlack通知自動化、クリティカル障害時の電話連絡自動化により、障害検知から復旧までの時間を大幅に短縮。障害対応を受動的から能動的に転換させました。
+                            </p>
+                            <div class="achievement-tech">Datadog / PagerDuty / Slack API / AWS CloudWatch</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<footer class="footer">
-    <div class="container">
-        <div class="frame">
-            <div class="frame-corner frame-corner-top-left"></div>
-            <div class="frame-corner frame-corner-top-right"></div>
-            <div class="frame-corner frame-corner-bottom-left"></div>
-            <div class="frame-corner frame-corner-bottom-right"></div>
-            <div class="frame-line frame-line-left"></div>
-            <div class="frame-line frame-line-right"></div>
-            <div class="frame-heading">Communication Links</div>
-            <div class="frame-content footer-content">
-                <div class="social-links">
-                    <a href="https://github.com/ProjectEuropa" class="social-link" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHubプロフィールを開く">
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
-                        </svg>
-                    </a>
-                    <a href="https://qiita.com/ProjectEuropa" class="social-link" target="_blank" rel="noopener noreferrer" title="Qiita" aria-label="Qiitaプロフィールを開く">
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M7.1,19c-0.3,0-0.5-0.1-0.7-0.3c-0.2-0.2-0.3-0.4-0.3-0.7V6c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h2.1 c0.3,0,0.5,0.1,0.7,0.3c0.2,0.2,0.3,0.4,0.3,0.7v12c0,0.3-0.1,0.5-0.3,0.7C9.7,18.9,9.4,19,9.2,19H7.1z M14.8,19 c-0.3,0-0.5-0.1-0.7-0.3c-0.2-0.2-0.3-0.4-0.3-0.7v-5.3c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h2.1c0.3,0,0.5,0.1,0.7,0.3 c0.2,0.2,0.3,0.4,0.3,0.7V18c0,0.3-0.1,0.5-0.3,0.7c-0.2,0.2-0.4,0.3-0.7,0.3H14.8z M14.8,9.5c-0.8,0-1.5-0.3-2.1-0.8 c-0.6-0.6-0.8-1.2-0.8-2.1c0-0.8,0.3-1.5,0.8-2.1c0.6-0.6,1.2-0.8,2.1-0.8c0.8,0,1.5,0.3,2.1,0.8c0.6,0.6,0.8,1.2,0.8,2.1 c0,0.8-0.3,1.5-0.8,2.1C16.3,9.2,15.6,9.5,14.8,9.5z" />
-                        </svg>
-                    </a>
-                    <a href="https://zenn.dev/m2" class="social-link" target="_blank" rel="noopener noreferrer" title="Zenn" aria-label="Zennプロフィールを開く">
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M.264 23.771h4.984c.264 0 .498-.147.645-.352L19.614.874c.176-.293-.029-.645-.381-.645h-4.72c-.235 0-.44.117-.557.323L.03 23.361c-.088.176.029.41.234.41zM17.445 23.419l6.479-10.408c.205-.323-.029-.733-.41-.733h-4.691c-.176 0-.352.088-.44.235l-6.655 10.643c-.176.264.029.616.352.616h4.779c.234-.001.468-.118.586-.353z"/>
-                        </svg>
-                    </a>
+    <footer class="footer">
+        <div class="container">
+            <div class="frame">
+                <div class="frame-corner frame-corner-top-left"></div>
+                <div class="frame-corner frame-corner-top-right"></div>
+                <div class="frame-corner frame-corner-bottom-left"></div>
+                <div class="frame-corner frame-corner-bottom-right"></div>
+                <div class="frame-line frame-line-left"></div>
+                <div class="frame-line frame-line-right"></div>
+                <div class="frame-heading">Communication Links</div>
+                <div class="frame-content footer-content">
+                    <div class="social-links">
+                        <a href="https://github.com/ProjectEuropa" class="social-link" target="_blank"
+                            rel="noopener noreferrer" title="GitHub" aria-label="GitHubプロフィールを開く">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+                            </svg>
+                        </a>
+                        <a href="https://qiita.com/ProjectEuropa" class="social-link" target="_blank"
+                            rel="noopener noreferrer" title="Qiita" aria-label="Qiitaプロフィールを開く">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M7.1,19c-0.3,0-0.5-0.1-0.7-0.3c-0.2-0.2-0.3-0.4-0.3-0.7V6c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h2.1 c0.3,0,0.5,0.1,0.7,0.3c0.2,0.2,0.3,0.4,0.3,0.7v12c0,0.3-0.1,0.5-0.3,0.7C9.7,18.9,9.4,19,9.2,19H7.1z M14.8,19 c-0.3,0-0.5-0.1-0.7-0.3c-0.2-0.2-0.3-0.4-0.3-0.7v-5.3c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h2.1c0.3,0,0.5,0.1,0.7,0.3 c0.2,0.2,0.3,0.4,0.3,0.7V18c0,0.3-0.1,0.5-0.3,0.7c-0.2,0.2-0.4,0.3-0.7,0.3H14.8z M14.8,9.5c-0.8,0-1.5-0.3-2.1-0.8 c-0.6-0.6-0.8-1.2-0.8-2.1c0-0.8,0.3-1.5,0.8-2.1c0.6-0.6,1.2-0.8,2.1-0.8c0.8,0,1.5,0.3,2.1,0.8c0.6,0.6,0.8,1.2,0.8,2.1 c0,0.8-0.3,1.5-0.8,2.1C16.3,9.2,15.6,9.5,14.8,9.5z" />
+                            </svg>
+                        </a>
+                        <a href="https://zenn.dev/m2" class="social-link" target="_blank" rel="noopener noreferrer"
+                            title="Zenn" aria-label="Zennプロフィールを開く">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M.264 23.771h4.984c.264 0 .498-.147.645-.352L19.614.874c.176-.293-.029-.645-.381-.645h-4.72c-.235 0-.44.117-.557.323L.03 23.361c-.088.176.029.41.234.41zM17.445 23.419l6.479-10.408c.205-.323-.029-.733-.41-.733h-4.691c-.176 0-.352.088-.44.235l-6.655 10.643c-.176.264.029.616.352.616h4.779c.234-.001.468-.118.586-.353z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="copyright"> 2025 <span>Team Project Europa</span> // All Systems Operational</p>
                 </div>
-                <p class="copyright"> 2025 <span>Team Project Europa</span> // All Systems Operational</p>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,8 +17,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@projecteuropa">
     <meta name="twitter:creator" content="@projecteuropa">
-    <meta name="twitter:title" content="Contact // Project Europa">
-    <meta name="twitter:description" content="Team Project Europaへのお問い合わせページです。Webサイト・Webアプリケーション制作のご依頼やご質問はこちらからどうぞ。">
+    <meta name="twitter:title" content="Contact - Project Europa // Cybernetic Interface">
+    <meta name="twitter:description" content="Team Project Europaへのお問い合わせフォームです。プロジェクトのご相談などお気軽にご連絡ください。">
     <meta name="twitter:image" content="https://hp.project-europa.work/images/ogp.jpeg">
 
     <!-- ファビコン -->
@@ -26,168 +27,180 @@
     <link rel="manifest" href="./images/favicon/site.webmanifest">
     <meta name="theme-color" content="#26DAFD">
 
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&family=Rajdhani:wght@300;400;500&family=Electrolize&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&family=Rajdhani:wght@300;400;500&family=Electrolize&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/main.js" defer></script>
 </head>
+
 <body>
-<div class="noise"></div>
-<div class="scanline"></div>
+    <div class="noise"></div>
+    <div class="scanline"></div>
 
-<header class="header">
-    <div class="container">
-        <div class="header-inner">
-            <div class="logo-container">
-                <div class="logo-text-main typing">EUROPA</div>
-                <div class="logo-text-sub typing">Exploration Mission Interface</div>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo-container">
+                    <div class="logo-text-main typing">EUROPA</div>
+                    <div class="logo-text-sub typing">Exploration Mission Interface</div>
+                </div>
+                <div class="header-line"></div>
+                <nav>
+                    <a href="/">Home</a>
+                    <a href="/about.html">About</a>
+                    <a href="/skill.html">Skill</a>
+                    <a href="/portfolio.html">Portfolio</a>
+                    <a href="/contact.html" class="active">Contact</a>
+                </nav>
             </div>
-            <div class="header-line"></div>
-            <nav>
-                <a href="/">Home</a>
-                <a href="/about.html">About</a>
-                <a href="/skill.html">Skill</a>
-                <a href="/portfolio.html">Portfolio</a>
-                <a href="/contact.html" class="active">Contact</a>
-            </nav>
         </div>
-    </div>
-</header>
+    </header>
 
-<section class="contact-section">
-    <div class="star-field" id="starField"></div>
-    <div class="space-bg"></div>
-    <div class="nebula"></div>
-    <div class="nebula"></div>
-    <div class="nebula"></div>
+    <section class="contact-section">
+        <div class="star-field" id="starField"></div>
+        <div class="space-bg"></div>
+        <div class="nebula"></div>
+        <div class="nebula"></div>
+        <div class="nebula"></div>
 
-    <div class="container">
-        <h1 class="page-title typing">CONTACT</h1>
+        <div class="container">
+            <h1 class="page-title typing">CONTACT</h1>
 
-        <div class="contact-container">
-            <div class="contact-header">
-                <span class="contact-header-icon">></span> MESSAGE TRANSMISSION
-            </div>
+            <div class="contact-container">
+                <div class="contact-header">
+                    <span class="contact-header-icon">></span> MESSAGE TRANSMISSION
+                </div>
 
-            <div class="contact-content">
-                <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/" enctype="multipart/form-data">
-                    <input type="hidden" name="form-name" value="contact" />
-                    <p class="hidden">
-                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-                    </p>
+                <div class="contact-content">
+                    <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true"
+                        netlify-honeypot="bot-field" action="/" enctype="multipart/form-data">
+                        <input type="hidden" name="form-name" value="contact" />
+                        <p class="hidden">
+                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        </p>
 
-                    <div class="form-group">
-                        <label for="name" class="form-label">NAME</label>
-                        <input type="text" id="name" name="name" class="form-input" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email" class="form-label">EMAIL</label>
-                        <input type="email" id="email" name="email" class="form-input" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message" class="form-label">MESSAGE</label>
-                        <textarea id="message" name="message" class="form-input" required></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="file" class="form-label">FILE UPLOAD</label>
-                        <div class="file-input-container">
-                            <label for="file" class="file-input-button">SELECT FILE</label>
-                            <div class="file-name-display" id="fileNameDisplay">No file selected</div>
-                            <input type="file" id="file" name="file">
+                        <div class="form-group">
+                            <label for="name" class="form-label">NAME</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
                         </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">EMAIL</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">MESSAGE</label>
+                            <textarea id="message" name="message" class="form-input" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="file" class="form-label">FILE UPLOAD</label>
+                            <div class="file-input-container">
+                                <label for="file" class="file-input-button">SELECT FILE</label>
+                                <div class="file-name-display" id="fileNameDisplay">No file selected</div>
+                                <input type="file" id="file" name="file">
+                            </div>
+                        </div>
+
+                        <button type="button" id="showConfirmButton" class="submit-button">
+                            <span class="button-icon">></span> SEND MESSAGE
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="frame">
+                <div class="frame-corner frame-corner-top-left"></div>
+                <div class="frame-corner frame-corner-top-right"></div>
+                <div class="frame-corner frame-corner-bottom-left"></div>
+                <div class="frame-corner frame-corner-bottom-right"></div>
+                <div class="frame-line frame-line-left"></div>
+                <div class="frame-line frame-line-right"></div>
+                <div class="frame-heading">Communication Links</div>
+                <div class="frame-content footer-content">
+                    <div class="social-links">
+                        <a href="https://github.com/ProjectEuropa" class="social-link" target="_blank"
+                            rel="noopener noreferrer" title="GitHub" aria-label="GitHubプロフィールを開く">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+                            </svg>
+                        </a>
+                        <a href="https://qiita.com/ProjectEuropa" class="social-link" target="_blank"
+                            rel="noopener noreferrer" title="Qiita" aria-label="Qiitaプロフィールを開く">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M7.1,19c-0.3,0-0.5-0.1-0.7-0.3c-0.2-0.2-0.3-0.4-0.3-0.7V6c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h2.1 c0.3,0,0.5,0.1,0.7,0.3c0.2,0.2,0.3,0.4,0.3,0.7v12c0,0.3-0.1,0.5-0.3,0.7C9.7,18.9,9.4,19,9.2,19H7.1z M14.8,19 c-0.3,0-0.5-0.1-0.7-0.3c-0.2-0.2-0.3-0.4-0.3-0.7v-5.3c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h2.1c0.3,0,0.5,0.1,0.7,0.3 c0.2,0.2,0.3,0.4,0.3,0.7V18c0,0.3-0.1,0.5-0.3,0.7c-0.2,0.2-0.4,0.3-0.7,0.3H14.8z M14.8,9.5c-0.8,0-1.5-0.3-2.1-0.8 c-0.6-0.6-0.8-1.2-0.8-2.1c0-0.8,0.3-1.5,0.8-2.1c0.6-0.6,1.2-0.8,2.1-0.8c0.8,0,1.5,0.3,2.1,0.8c0.6,0.6,0.8,1.2,0.8,2.1 c0,0.8-0.3,1.5-0.8,2.1C16.3,9.2,15.6,9.5,14.8,9.5z" />
+                            </svg>
+                        </a>
+                        <a href="https://zenn.dev/m2" class="social-link" target="_blank" rel="noopener noreferrer"
+                            title="Zenn" aria-label="Zennプロフィールを開く">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M.264 23.771h4.984c.264 0 .498-.147.645-.352L19.614.874c.176-.293-.029-.645-.381-.645h-4.72c-.235 0-.44.117-.557.323L.03 23.361c-.088.176.029.41.234.41zM17.445 23.419l6.479-10.408c.205-.323-.029-.733-.41-.733h-4.691c-.176 0-.352.088-.44.235l-6.655 10.643c-.176.264.029.616.352.616h4.779c.234-.001.468-.118.586-.353z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="copyright"> 2025 <span>Team Project Europa</span> // All Systems Operational</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- モーダル -->
+    <div class="modal-backdrop" id="confirmModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"
+        aria-describedby="modalDesc">
+        <div class="modal">
+            <div class="contact-header" id="modalTitle">
+                <span class="contact-header-icon">></span> CONFIRM TRANSMISSION
+            </div>
+            <div class="modal-body">
+                <h3 class="modal-title" id="modalDesc">以下の内容で送信します。確認してください：</h3>
+
+                <div class="confirm-data">
+                    <div class="confirm-item">
+                        <span class="confirm-label">NAME:</span>
+                        <div class="confirm-value" id="confirmName"></div>
                     </div>
 
-                    <button type="button" id="showConfirmButton" class="submit-button">
-                        <span class="button-icon">></span> SEND MESSAGE
+                    <div class="confirm-item">
+                        <span class="confirm-label">EMAIL:</span>
+                        <div class="confirm-value" id="confirmEmail"></div>
+                    </div>
+
+                    <div class="confirm-item">
+                        <span class="confirm-label">MESSAGE:</span>
+                        <div class="confirm-value" id="confirmMessage"></div>
+                    </div>
+
+                    <div class="confirm-item">
+                        <span class="confirm-label">FILE:</span>
+                        <div class="confirm-value" id="confirmFile"></div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="modal-button cancel" id="cancelButton">Cancel</button>
+                    <button type="button" class="modal-button confirm" id="confirmButton">
+                        <span class="button-icon">></span> Send
                     </button>
-                </form>
+                </div>
             </div>
         </div>
     </div>
-</section>
 
-<footer>
-    <div class="container">
-        <div class="frame">
-            <div class="frame-corner frame-corner-top-left"></div>
-            <div class="frame-corner frame-corner-top-right"></div>
-            <div class="frame-corner frame-corner-bottom-left"></div>
-            <div class="frame-corner frame-corner-bottom-right"></div>
-            <div class="frame-line frame-line-left"></div>
-            <div class="frame-line frame-line-right"></div>
-            <div class="frame-heading">Communication Links</div>
-            <div class="frame-content footer-content">
-                <div class="social-links">
-                    <a href="https://github.com/ProjectEuropa" class="social-link" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHubプロフィールを開く">
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
-                        </svg>
-                    </a>
-                    <a href="https://qiita.com/ProjectEuropa" class="social-link" target="_blank" rel="noopener noreferrer" title="Qiita" aria-label="Qiitaプロフィールを開く">
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M7.1,19c-0.3,0-0.5-0.1-0.7-0.3c-0.2-0.2-0.3-0.4-0.3-0.7V6c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h2.1 c0.3,0,0.5,0.1,0.7,0.3c0.2,0.2,0.3,0.4,0.3,0.7v12c0,0.3-0.1,0.5-0.3,0.7C9.7,18.9,9.4,19,9.2,19H7.1z M14.8,19 c-0.3,0-0.5-0.1-0.7-0.3c-0.2-0.2-0.3-0.4-0.3-0.7v-5.3c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h2.1c0.3,0,0.5,0.1,0.7,0.3 c0.2,0.2,0.3,0.4,0.3,0.7V18c0,0.3-0.1,0.5-0.3,0.7c-0.2,0.2-0.4,0.3-0.7,0.3H14.8z M14.8,9.5c-0.8,0-1.5-0.3-2.1-0.8 c-0.6-0.6-0.8-1.2-0.8-2.1c0-0.8,0.3-1.5,0.8-2.1c0.6-0.6,1.2-0.8,2.1-0.8c0.8,0,1.5,0.3,2.1,0.8c0.6,0.6,0.8,1.2,0.8,2.1 c0,0.8-0.3,1.5-0.8,2.1C16.3,9.2,15.6,9.5,14.8,9.5z" />
-                        </svg>
-                    </a>
-                    <a href="https://zenn.dev/m2" class="social-link" target="_blank" rel="noopener noreferrer" title="Zenn" aria-label="Zennプロフィールを開く">
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M.264 23.771h4.984c.264 0 .498-.147.645-.352L19.614.874c.176-.293-.029-.645-.381-.645h-4.72c-.235 0-.44.117-.557.323L.03 23.361c-.088.176.029.41.234.41zM17.445 23.419l6.479-10.408c.205-.323-.029-.733-.41-.733h-4.691c-.176 0-.352.088-.44.235l-6.655 10.643c-.176.264.029.616.352.616h4.779c.234-.001.468-.118.586-.353z"/>
-                        </svg>
-                    </a>
-                </div>
-                <p class="copyright"> 2025 <span>Team Project Europa</span> // All Systems Operational</p>
-            </div>
-        </div>
+    <!-- 通知 -->
+    <div class="notification" id="notification">
+        <span class="notification-icon">></span>
+        <span class="notification-message" id="notificationMessage"></span>
     </div>
-</footer>
-
-<!-- モーダル -->
-<div class="modal-backdrop" id="confirmModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
-    <div class="modal">
-        <div class="contact-header" id="modalTitle">
-            <span class="contact-header-icon">></span> CONFIRM TRANSMISSION
-        </div>
-        <div class="modal-body">
-            <h3 class="modal-title" id="modalDesc">以下の内容で送信します。確認してください：</h3>
-
-            <div class="confirm-data">
-                <div class="confirm-item">
-                    <span class="confirm-label">NAME:</span>
-                    <div class="confirm-value" id="confirmName"></div>
-                </div>
-
-                <div class="confirm-item">
-                    <span class="confirm-label">EMAIL:</span>
-                    <div class="confirm-value" id="confirmEmail"></div>
-                </div>
-
-                <div class="confirm-item">
-                    <span class="confirm-label">MESSAGE:</span>
-                    <div class="confirm-value" id="confirmMessage"></div>
-                </div>
-
-                <div class="confirm-item">
-                    <span class="confirm-label">FILE:</span>
-                    <div class="confirm-value" id="confirmFile"></div>
-                </div>
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="modal-button cancel" id="cancelButton">Cancel</button>
-                <button type="button" class="modal-button confirm" id="confirmButton">
-                    <span class="button-icon">></span> Send
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- 通知 -->
-<div class="notification" id="notification">
-    <span class="notification-icon">></span>
-    <span class="notification-message" id="notificationMessage"></span>
-</div>
 
 </body>
+
 </html>
