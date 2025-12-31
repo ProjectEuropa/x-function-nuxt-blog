@@ -150,10 +150,22 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// 著作権年を動的に更新する関数
+function updateCopyrightYear() {
+    const copyrightElements = document.querySelectorAll('.copyright');
+    const currentYear = new Date().getFullYear();
+
+    copyrightElements.forEach(element => {
+        // "2016-" の後に現在の年を動的に設定
+        element.innerHTML = element.innerHTML.replace(/2016-\d{4}/, `2016-${currentYear}`);
+    });
+}
+
 // DOMContentLoadedイベントでアニメーションを設定
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded');
     setupAnimations();
+    updateCopyrightYear();
 });
 
 // ページ読み込み時の処理
