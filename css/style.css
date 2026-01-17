@@ -2430,6 +2430,11 @@ textarea.form-input {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+
+    .hero-cta {
+        animation: none !important;
+        animation-delay: 0s !important;
+    }
 }
 
 /* アクセシビリティ: キーボードフォーカス状態 */
