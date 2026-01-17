@@ -825,6 +825,14 @@ header.scrolled {
     box-shadow: var(--glow);
 }
 
+.section-subtitle {
+    font-size: 14px;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-top: 5px;
+    letter-spacing: 1px;
+}
+
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -2449,4 +2457,193 @@ select:focus-visible {
 nav a:focus-visible {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
+}
+
+/* CTA Buttons */
+.hero-cta {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    animation: text-appear 0.5s both;
+    animation-delay: 6s;
+    /* Appear after text typing */
+    position: relative;
+    z-index: 10;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-family: var(--font-mono);
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: rgba(38, 218, 253, 0.2);
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    box-shadow: 0 0 10px rgba(38, 218, 253, 0.2);
+}
+
+.btn-primary:hover {
+    background: rgba(38, 218, 253, 0.4);
+    box-shadow: 0 0 20px rgba(38, 218, 253, 0.6);
+    transform: translateY(-2px);
+    color: #fff;
+    text-shadow: 0 0 5px var(--color-primary);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid rgba(38, 218, 253, 0.5);
+    color: var(--color-secondary);
+}
+
+.btn-secondary:hover {
+    background: rgba(38, 218, 253, 0.1);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 10px rgba(38, 218, 253, 0.3);
+    transform: translateY(-2px);
+    color: var(--color-primary);
+}
+
+@media (max-width: 480px) {
+    .hero-cta {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+}
+
+/* Achievements Section */
+.achievements-section {
+    padding: 40px 0;
+}
+
+.home-achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.achievement-card {
+    background: rgba(1, 11, 14, 0.6);
+    border: 1px solid rgba(38, 218, 253, 0.2);
+    padding: 20px;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.achievement-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 15px rgba(38, 218, 253, 0.2);
+    transform: translateY(-5px);
+}
+
+.achievement-card h3 {
+    font-family: var(--font-mono);
+    color: var(--color-primary);
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(38, 218, 253, 0.2);
+    padding-bottom: 5px;
+}
+
+.achievement-card p {
+    font-size: 14px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.achievement-tech-stack {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--color-secondary);
+    opacity: 0.8;
+}
+
+/* Certifications Banner */
+.cert-banner {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: rgba(38, 218, 253, 0.05);
+    border: 1px solid rgba(38, 218, 253, 0.3);
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.cert-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cert-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-primary);
+}
+
+.cert-icon svg {
+    width: 30px;
+    height: 30px;
+    fill: var(--color-primary);
+}
+
+.cert-info h4 {
+    color: var(--color-primary);
+    font-family: var(--font-mono);
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+
+.cert-info p {
+    font-size: 12px;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* Lecturer Card Special Style */
+.lecturer-card {
+    border-color: rgba(255, 215, 0, 0.3);
+    /* Gold tint for leadership */
+    background: linear-gradient(135deg, rgba(1, 11, 14, 0.8) 0%, rgba(20, 20, 10, 0.4) 100%);
+}
+
+.lecturer-card:hover {
+    border-color: rgba(255, 215, 0, 0.8);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+.lecturer-card h3 {
+    color: #ffd700;
+    /* Gold */
+    border-bottom-color: rgba(255, 215, 0, 0.3);
 }
