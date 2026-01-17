@@ -1029,7 +1029,9 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1045,11 +1047,11 @@ footer {
 }
 
 .modal {
-    background-color: rgba(1, 11, 14, 0.95);
-    border: 1px solid var(--color-primary);
+    background-color: #0a1e28;
+    border: 2px solid var(--color-primary);
     width: 90%;
     max-width: 600px;
-    box-shadow: 0 0 20px rgba(38, 218, 253, 0.4);
+    box-shadow: 0 0 30px rgba(38, 218, 253, 0.5), inset 0 0 20px rgba(38, 218, 253, 0.1);
     overflow: hidden;
     transform: translateY(-20px);
     transition: transform 0.3s ease;
@@ -1257,6 +1259,13 @@ footer {
     font-family: var(--font-mono);
     font-size: 14px;
     letter-spacing: 1px;
+}
+
+.form-label-jp {
+    color: var(--text-color);
+    font-size: 12px;
+    opacity: 0.8;
+    margin-left: 8px;
 }
 
 .form-input {
@@ -2471,7 +2480,7 @@ nav a:focus-visible {
     justify-content: center;
     gap: 20px;
     animation: text-appear 0.5s both;
-    animation-delay: 6s;
+    animation-delay: 2s;
     /* Appear after text typing */
     position: relative;
     z-index: 10;

@@ -65,15 +65,34 @@
         <div class="nebula"></div>
 
         <div class="container">
-            <h1 class="page-title typing">CONTACT</h1>
-            <p class="section-subtitle">お問い合わせ</p>
-
-            <div class="contact-container">
-                <div class="contact-header">
-                    <span class="contact-header-icon">></span> MESSAGE TRANSMISSION
+            <div class="frame">
+                <div class="frame-corner frame-corner-top-left"></div>
+                <div class="frame-corner frame-corner-top-right"></div>
+                <div class="frame-corner frame-corner-bottom-left"></div>
+                <div class="frame-corner frame-corner-bottom-right"></div>
+                <div class="frame-line frame-line-left"></div>
+                <div class="frame-line frame-line-right"></div>
+                <div class="frame-heading">Contact Database</div>
+                <div class="frame-content">
+                    <h1 class="page-title typing">Contact Us</h1>
+                    <p class="section-subtitle">お問い合わせ</p>
+                    <p class="service-text">お問い合わせはこちらのフォームからお気軽にどうぞ。ご質問、ご相談など、お待ちしております。</p>
                 </div>
+            </div>
 
-                <div class="contact-content">
+            <div class="frame">
+                <div class="frame-corner frame-corner-top-left"></div>
+                <div class="frame-corner frame-corner-top-right"></div>
+                <div class="frame-corner frame-corner-bottom-left"></div>
+                <div class="frame-corner frame-corner-bottom-right"></div>
+                <div class="frame-line frame-line-left"></div>
+                <div class="frame-line frame-line-right"></div>
+                <div class="frame-heading">Message Transmission</div>
+                <div class="frame-content">
+                    <div class="section-header">
+                        <h2 class="section-title">Send a Message</h2>
+                        <p class="section-subtitle">メッセージを送信</p>
+                    </div>
                     <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true"
                         netlify-honeypot="bot-field" action="/" enctype="multipart/form-data">
                         <input type="hidden" name="form-name" value="contact" />
@@ -82,22 +101,22 @@
                         </p>
 
                         <div class="form-group">
-                            <label for="name" class="form-label">NAME</label>
+                            <label for="name" class="form-label">NAME <span class="form-label-jp">お名前</span></label>
                             <input type="text" id="name" name="name" class="form-input" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="email" class="form-label">EMAIL</label>
+                            <label for="email" class="form-label">EMAIL <span class="form-label-jp">メールアドレス</span></label>
                             <input type="email" id="email" name="email" class="form-input" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="message" class="form-label">MESSAGE</label>
+                            <label for="message" class="form-label">MESSAGE <span class="form-label-jp">メッセージ</span></label>
                             <textarea id="message" name="message" class="form-input" required></textarea>
                         </div>
 
                         <div class="form-group">
-                            <label for="file" class="form-label">FILE UPLOAD</label>
+                            <label for="file" class="form-label">FILE UPLOAD <span class="form-label-jp">ファイル添付</span></label>
                             <div class="file-input-container">
                                 <label for="file" class="file-input-button">SELECT FILE</label>
                                 <div class="file-name-display" id="fileNameDisplay">No file selected</div>
