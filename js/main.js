@@ -97,6 +97,12 @@ function hideModal() {
     }
 }
 
+// メールアドレスの形式を検証
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
 // フォームデータを取得
 function getFormData() {
     const name = document.getElementById('name')?.value || '';
@@ -210,6 +216,12 @@ window.addEventListener('load', () => {
                 // フォームバリデーション
                 if (!formData.name || !formData.email || !formData.message) {
                     showNotification('すべての項目を入力してください', 'error');
+                    return;
+                }
+
+                // メールアドレス形式チェック
+                if (!isValidEmail(formData.email)) {
+                    showNotification('有効なメールアドレスを入力してください', 'error');
                     return;
                 }
 
