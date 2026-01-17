@@ -2221,7 +2221,7 @@ textarea.form-input {
 }
 
 .achievement-desc {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-color);
     line-height: 1.6;
     margin-bottom: 1rem;
 }
