@@ -1357,9 +1357,10 @@ textarea.form-input {
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s;
-    align-self: flex-start;
+    align-self: center;
     display: flex;
     align-items: center;
+    justify-content: center;
     text-transform: uppercase;
 }
 
