@@ -28,11 +28,8 @@ function createStars() {
 
 // ページロード時に各要素をアニメーション表示
 function setupAnimations() {
-    console.log('Setting up animations...');
-
     // フレームラインのアニメーション
     const frameLines = document.querySelectorAll('.frame-line');
-    console.log('Frame lines found:', frameLines.length);
     frameLines.forEach((line, index) => {
         line.style.animation = `line-appear 0.5s both`;
         line.style.animationDelay = `${0.3 + (index * 0.1)}s`;
@@ -40,7 +37,6 @@ function setupAnimations() {
 
     // ヘッダーのアニメーション - すべてのページで実行
     const headerInner = document.querySelector('.header-inner');
-    console.log('Header inner found:', headerInner);
     if (headerInner) {
         headerInner.style.animation = 'header-appear 0.5s both';
         headerInner.style.animationDelay = '0.1s';
@@ -61,7 +57,6 @@ function setupAnimations() {
     });
 
     // タイピングアニメーションはCSSで処理されます
-    console.log('Animations setup complete');
 }
 
 // 通知を表示する関数
@@ -213,7 +208,6 @@ function setupMobileNav() {
 
 // DOMContentLoadedイベントでアニメーションを設定
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM fully loaded');
     setupAnimations();
     updateCopyrightYear();
     setupMobileNav();
@@ -221,7 +215,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ページ読み込み時の処理
 window.addEventListener('load', () => {
-    console.log('Window loaded');
     // 星を生成（star-fieldがある場合のみ）
     createStars();
 
@@ -410,7 +403,6 @@ document.addEventListener('DOMContentLoaded', function () {
         createStars();
     } else {
         // createStars関数が存在しない場合のフォールバック
-        console.log('Creating stars manually...');
         const starField = document.getElementById('starField');
         if (starField) {
             const starCount = 250;
