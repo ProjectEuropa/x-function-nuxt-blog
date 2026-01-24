@@ -231,8 +231,8 @@ window.addEventListener('load', () => {
     // すべてのページでアニメーションを設定（念のため再度実行）
     setupAnimations();
 
-    // すべての背景を強制的に透明にする
-    const transparentElements = document.querySelectorAll('.frame, .frame-content, span, p, h1, h2, h3, div');
+    // テキスト要素の背景を強制的に透明にする（frameは除外）
+    const transparentElements = document.querySelectorAll('span, p, h1, h2, h3');
     transparentElements.forEach(element => {
         element.style.background = 'transparent';
     });
