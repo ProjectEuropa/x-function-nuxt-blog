@@ -169,38 +169,48 @@ function setupMobileNav() {
     const mobileNavClose = document.querySelector('.mobile-nav-close');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
 
+    // メニューを開く
+    function openMenu() {
+        hamburgerBtn.classList.add('active');
+        mobileNav.classList.add('active');
+        hamburgerBtn.setAttribute('aria-expanded', 'true');
+        mobileNav.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    // メニューを閉じる
+    function closeMenu() {
+        hamburgerBtn.classList.remove('active');
+        mobileNav.classList.remove('active');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+
     if (hamburgerBtn && mobileNav) {
         // ハンバーガーボタンのクリック
         hamburgerBtn.addEventListener('click', () => {
-            hamburgerBtn.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+            if (mobileNav.classList.contains('active')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
         });
 
         // 閉じるボタンのクリック
         if (mobileNavClose) {
-            mobileNavClose.addEventListener('click', () => {
-                hamburgerBtn.classList.remove('active');
-                mobileNav.classList.remove('active');
-                document.body.style.overflow = '';
-            });
+            mobileNavClose.addEventListener('click', closeMenu);
         }
 
         // ナビリンクのクリックでメニューを閉じる
         mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburgerBtn.classList.remove('active');
-                mobileNav.classList.remove('active');
-                document.body.style.overflow = '';
-            });
+            link.addEventListener('click', closeMenu);
         });
 
         // ESCキーでメニューを閉じる
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
-                hamburgerBtn.classList.remove('active');
-                mobileNav.classList.remove('active');
-                document.body.style.overflow = '';
+                closeMenu();
             }
         });
     }
