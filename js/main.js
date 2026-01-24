@@ -28,11 +28,8 @@ function createStars() {
 
 // ページロード時に各要素をアニメーション表示
 function setupAnimations() {
-    console.log('Setting up animations...');
-
     // フレームラインのアニメーション
     const frameLines = document.querySelectorAll('.frame-line');
-    console.log('Frame lines found:', frameLines.length);
     frameLines.forEach((line, index) => {
         line.style.animation = `line-appear 0.5s both`;
         line.style.animationDelay = `${0.3 + (index * 0.1)}s`;
@@ -40,7 +37,6 @@ function setupAnimations() {
 
     // ヘッダーのアニメーション - すべてのページで実行
     const headerInner = document.querySelector('.header-inner');
-    console.log('Header inner found:', headerInner);
     if (headerInner) {
         headerInner.style.animation = 'header-appear 0.5s both';
         headerInner.style.animationDelay = '0.1s';
@@ -61,7 +57,6 @@ function setupAnimations() {
     });
 
     // タイピングアニメーションはCSSで処理されます
-    console.log('Animations setup complete');
 }
 
 // 通知を表示する関数
@@ -147,7 +142,7 @@ function toggleLoading(isLoading) {
 }
 
 // スクロール時のヘッダースタイル変更
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const header = document.querySelector('header');
     if (window.scrollY > 50) {
         header.classList.add('scrolled');
@@ -167,16 +162,69 @@ function updateCopyrightYear() {
     });
 }
 
+// モバイルナビゲーションのセットアップ
+function setupMobileNav() {
+    const hamburgerBtn = document.querySelector('.hamburger-btn');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const mobileNavClose = document.querySelector('.mobile-nav-close');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+
+    // メニューを開く
+    function openMenu() {
+        hamburgerBtn.classList.add('active');
+        mobileNav.classList.add('active');
+        hamburgerBtn.setAttribute('aria-expanded', 'true');
+        mobileNav.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    // メニューを閉じる
+    function closeMenu() {
+        hamburgerBtn.classList.remove('active');
+        mobileNav.classList.remove('active');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+
+    if (hamburgerBtn && mobileNav) {
+        // ハンバーガーボタンのクリック
+        hamburgerBtn.addEventListener('click', () => {
+            if (mobileNav.classList.contains('active')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+
+        // 閉じるボタンのクリック
+        if (mobileNavClose) {
+            mobileNavClose.addEventListener('click', closeMenu);
+        }
+
+        // ナビリンクのクリックでメニューを閉じる
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // ESCキーでメニューを閉じる
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
+                closeMenu();
+            }
+        });
+    }
+}
+
 // DOMContentLoadedイベントでアニメーションを設定
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM fully loaded');
     setupAnimations();
     updateCopyrightYear();
+    setupMobileNav();
 });
 
 // ページ読み込み時の処理
 window.addEventListener('load', () => {
-    console.log('Window loaded');
     // 星を生成（star-fieldがある場合のみ）
     createStars();
 
@@ -197,7 +245,7 @@ window.addEventListener('load', () => {
         const fileNameDisplay = document.getElementById('fileNameDisplay');
 
         if (fileInput && fileNameDisplay) {
-            fileInput.addEventListener('change', function() {
+            fileInput.addEventListener('change', function () {
                 if (this.files.length > 0) {
                     fileNameDisplay.textContent = this.files[0].name;
                 } else {
@@ -209,7 +257,7 @@ window.addEventListener('load', () => {
         // 「送信」ボタンのクリックイベント
         const showConfirmButton = document.getElementById('showConfirmButton');
         if (showConfirmButton) {
-            showConfirmButton.addEventListener('click', function() {
+            showConfirmButton.addEventListener('click', function () {
                 // フォームデータを取得
                 const formData = getFormData();
 
@@ -236,7 +284,7 @@ window.addEventListener('load', () => {
         // キャンセルボタンの処理
         const cancelButton = document.getElementById('cancelButton');
         if (cancelButton) {
-            cancelButton.addEventListener('click', function() {
+            cancelButton.addEventListener('click', function () {
                 hideModal();
             });
         }
@@ -244,7 +292,7 @@ window.addEventListener('load', () => {
         // 送信確認ボタンの処理
         const confirmButton = document.getElementById('confirmButton');
         if (confirmButton) {
-            confirmButton.addEventListener('click', function() {
+            confirmButton.addEventListener('click', function () {
                 // モーダルを非表示
                 hideModal();
 
@@ -261,15 +309,15 @@ window.addEventListener('load', () => {
                     method: 'POST',
                     body: formData
                 })
-                .then(() => {
-                    // 成功時の処理
-                    window.location.href = '/form-submission-success.html';
-                })
-                .catch((error) => {
-                    // エラー時の処理
-                    console.error('Form submission error:', error);
-                    showNotification('送信中にエラーが発生しました。もう一度お試しください。', 'error');
-                });
+                    .then(() => {
+                        // 成功時の処理
+                        window.location.href = '/form-submission-success.html';
+                    })
+                    .catch((error) => {
+                        // エラー時の処理
+                        console.error('Form submission error:', error);
+                        showNotification('送信中にエラーが発生しました。もう一度お試しください。', 'error');
+                    });
             });
         }
     }
@@ -277,7 +325,7 @@ window.addEventListener('load', () => {
 
 // Skills ページ用の追加JavaScript
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // スクロールアニメーション
     const animateOnScroll = () => {
         const elements = document.querySelectorAll('.skill-card, .project-item');
@@ -303,12 +351,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const skillCards = document.querySelectorAll('.skill-card');
 
     skillCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
+        card.addEventListener('mouseenter', function () {
             const icon = this.querySelector('.skill-icon');
             icon.style.animation = 'pulse 1s infinite';
         });
 
-        card.addEventListener('mouseleave', function() {
+        card.addEventListener('mouseleave', function () {
             const icon = this.querySelector('.skill-icon');
             icon.style.animation = '';
         });
@@ -320,7 +368,7 @@ document.addEventListener('DOMContentLoaded', function() {
         pageTitle.classList.add('typing');
 
         // タイピング終了後のカーソル点滅の追加
-        pageTitle.addEventListener('animationend', function() {
+        pageTitle.addEventListener('animationend', function () {
             const cursor = document.createElement('span');
             cursor.classList.add('cursor');
             cursor.textContent = '|';
@@ -333,12 +381,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // 資格セクションの特殊効果
     const certNote = document.querySelector('.certification-note');
     if (certNote) {
-        certNote.addEventListener('mouseenter', function() {
+        certNote.addEventListener('mouseenter', function () {
             this.style.transform = 'scale(1.02)';
             this.style.boxShadow = '0 0 20px rgba(38, 218, 253, 0.4)';
         });
 
-        certNote.addEventListener('mouseleave', function() {
+        certNote.addEventListener('mouseleave', function () {
             this.style.transform = 'scale(1)';
             this.style.boxShadow = 'none';
         });
@@ -347,13 +395,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // プロジェクト項目のホバーエフェクト
     const projectItems = document.querySelectorAll('.project-item');
     projectItems.forEach(item => {
-        item.addEventListener('mouseenter', function() {
+        item.addEventListener('mouseenter', function () {
             const tech = this.querySelector('.project-tech');
             tech.style.color = 'var(--color-primary)';
             tech.style.borderTopColor = 'var(--color-primary)';
         });
 
-        item.addEventListener('mouseleave', function() {
+        item.addEventListener('mouseleave', function () {
             const tech = this.querySelector('.project-tech');
             tech.style.color = '';
             tech.style.borderTopColor = '';
@@ -365,7 +413,6 @@ document.addEventListener('DOMContentLoaded', function() {
         createStars();
     } else {
         // createStars関数が存在しない場合のフォールバック
-        console.log('Creating stars manually...');
         const starField = document.getElementById('starField');
         if (starField) {
             const starCount = 250;
@@ -383,7 +430,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ページスクロール時のヘッダー変更
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const header = document.querySelector('header');
     if (window.scrollY > 50) {
         header.classList.add('scrolled');
@@ -393,7 +440,7 @@ window.addEventListener('scroll', function() {
 });
 
 // 画面サイズ変更時の調整
-window.addEventListener('resize', function() {
+window.addEventListener('resize', function () {
     // レスポンシブ対応のための処理
     const skillCards = document.querySelectorAll('.skill-card');
     if (window.innerWidth <= 480) {

@@ -81,6 +81,9 @@ dist
 .idea
 .editorconfig
 
+# Claude Code
+.claude/settings.local.json
+
 # Service worker
 sw.*
 
