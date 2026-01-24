@@ -1014,14 +1014,36 @@ footer {
 
 /* レスポンシブ */
 @media (max-width: 768px) {
+
+    /* フレームの幅をはみ出さないように制限 */
+    .frame {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .hero-title {
+        font-size: 16px;
+        word-break: break-word;
+        white-space: normal !important;
+    }
+
+    /* モバイルではタイピングアニメーションをフェードインに置き換え */
+    .hero-title.typing {
+        animation: text-appear 1s ease-out forwards !important;
+        animation-delay: 0.5s !important;
+        width: auto !important;
+        white-space: normal !important;
+        opacity: 0;
+    }
+
+    .hero-title.typing::after {
+        display: none;
+    }
+
     .planet {
         width: 200px;
         height: 200px;
         right: 5%;
-    }
-
-    .hero-title {
-        font-size: 20px;
     }
 
     .skills-grid {
